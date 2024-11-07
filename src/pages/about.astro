@@ -1,0 +1,37 @@
+---
+import '../global.css';
+import Header from '../header.astro'
+const pathname = new URL(Astro.request.url).pathname;
+const currentPath = pathname.slice(1);
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content={Astro.generator} />
+<link rel="alternate" type="application/rss+xml" title="Thadeus Smith" href={new URL("rss.xml", Astro.site)}/>
+<link rel="sitemap" href="/sitemap-index.xml" />
+<script defer data-domains="thadeussmith.com,reader5567.github.io" src="https://cloud.umami.is/script.js" data-website-id="9e360623-16d5-4cbd-9d87-24ef770232b9"></script>
+<title>Thadeus Smith – About</title>
+</head>
+<body>
+<Header />
+<article>
+<h2>About Me</h2>
+<p>I am currently a Speech and Debate Teacher at the American Heritage School in Broward County, Florida. I was previously a Lead for America National Hometown Fellow serving in my hometown community of Kitsap County, Washington. My service relates to community planning, DEI work, and how local government can foster inclusive communities. Before that, I was a graduate student at the University of Essex, where I earned a Masters degree in Theory & Practice of Human Rights. My research focused on how anti-transgender legislation in the United States, particularly restrictions targeted at children, constitute human rights violations.</p>
+<p>I am currently a Speech and Debate Teacher at the American Heritage School in Broward County, Florida. I was previously a Lead for America National Hometown Fellow serving in my hometown community of Kitsap County, Washington. My service relates to community planning, DEI work, and how local government can foster inclusive communities. Before that, I was a graduate student at the University of Essex, where I earned a Masters degree in Theory & Practice of Human Rights. My research focused on how anti-transgender legislation in the United States, particularly restrictions targeted at children, constitute human rights violations.</p>
+<p>I am currently a Speech and Debate Teacher at the American Heritage School in Broward County, Florida. I was previously a Lead for America National Hometown Fellow serving in my hometown community of Kitsap County, Washington. My service relates to community planning, DEI work, and how local government can foster inclusive communities. Before that, I was a graduate student at the University of Essex, where I earned a Masters degree in Theory & Practice of Human Rights. My research focused on how anti-transgender legislation in the United States, particularly restrictions targeted at children, constitute human rights violations.</p>
+</article>
+<footer>
+<div class="info">
+<p><span class="infotype">Title:</span> About</p>
+<p><span class="infotype">Author:</span> Thadeus Smith</p>
+<p><span class="infotype">RSS:</span> <a href="/feed.xml">feed.xml</a></p>
+</div>
+<div class="siteinfo">
+<p>© 2024</p>
+</div>
+</footer>
+</body>
+</html>

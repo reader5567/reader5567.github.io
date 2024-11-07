@@ -1,0 +1,12 @@
+---
+const pathname = new URL(Astro.request.url).pathname;
+const currentPath = pathname.slice(1);
+---
+<header>
+  <h1>Thadeus <br>Smith</h1>
+  <nav>
+    <a class={currentPath === "" ? "active" : ""} href="/">Résumé,</a>
+    <a class={currentPath.startsWith("writing") ? "active" : ""} href="/writing">Writing,</a> 
+    <a class={currentPath.startsWith("about") ? "active" : ""} href="/about">About</a>
+  </nav>
+</header>

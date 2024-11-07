@@ -1,0 +1,146 @@
+@font-face {
+  font-family: Mona;
+  src:
+    url('/Mona-Sans.woff2') format('woff2 supports variations'),
+    url('/Mona-Sans.woff2') format('woff2-variations'),
+    url('/Mona-Sans.woff2') format('woff2');
+  font-weight: 200 900;
+  font-stretch: 75% 125%;
+}
+body{
+background-repeat: repeat;
+background-image: url('/dots.gif');
+padding: 24px;
+font-family: Mona, sans-serif;
+font-weight: 550;
+font-stretch: 100%;
+margin: 0px;
+font-size: 1.3rem;
+border: solid 12px;
+box-sizing: border-box;
+min-height: 100vh;
+min-height: 100dvh;
+}
+header{
+max-width: 100%;
+}
+header{
+display:flex;
+justify-content: space-between;
+flex-wrap:wrap;
+margin-bottom: 1rem;
+}
+main,article,footer{
+max-width: 750px;
+padding: 0 0.4rem;
+}
+article,footer{
+
+border-top: 4px solid;
+padding: 0.5em;
+}
+footer{
+font-family: monospace;
+font-weight: bold;
+font-size: 1rem;
+display: flex;
+flex-wrap: wrap;
+justify-content: space-between;
+}
+footer p{
+margin: 0;
+display: flex;
+}
+footer .info{
+flex-grow: 1;
+}
+footer .infotype{
+display:inline-block;
+flex-basis: 7rem;
+flex-shrink: 0;
+}
+h1{
+font-size: 4rem;
+font-size: min(max(10vw,3rem), 10rem);
+text-transform: uppercase;
+font-weight: 900;
+font-stretch: 115%;
+margin: 0;
+margin-bottom: 1rem;
+line-height: 0.8;
+overflow-wrap: break-word;
+}
+h2,#article-title{
+font-size: 2.5rem;
+font-size: min(max(4vw,1.5rem), 2.5rem);
+font-weight: 800;
+margin: 0.5rem 0;
+text-transform: uppercase;
+font-stretch: 105%;
+}
+hr{
+border: none;
+border: 3px solid black;
+}
+nav{
+font-size: 1.7rem;
+font-size: min(max(3vw,1.5rem), 2.5rem);
+font-weight: 600;
+font-stretch: 110%;
+/* margin: 1rem 0; */
+}
+nav a{
+color:inherit;
+text-decoration: none;
+}
+nav a:hover{
+text-decoration: underline;
+}
+figure{
+margin:0;
+}
+figcaption{
+text-align:center;
+}
+img{
+border: solid 6px;
+width: 100%;
+box-sizing: border-box;
+}
+
+.active{
+text-decoration: underline;
+}
+a{
+color:inherit;
+word-break: break-word;
+}
+
+
+body::before{
+content:"";
+position: fixed;
+width: 100%;
+border-top: black solid 12px;
+top:0;left:0;right:0;
+}
+body::after{
+content:"";
+position: fixed;
+width: 100%;
+border-top: black solid 12px;
+bottom:0;left:0;right:0;
+}
+
+@media screen and (max-width: 800px) {
+	body{
+    border: solid 6px;
+    padding: 6px;
+	}
+	body::before,body::after{
+    border-top: black solid 6px;
+	}
+	main,article,footer{
+		padding: 0;
+	}
+}

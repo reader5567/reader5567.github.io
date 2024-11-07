@@ -1,0 +1,99 @@
+---
+import '../global.css';
+import Header from '../header.astro'
+const pathname = new URL(Astro.request.url).pathname;
+const currentPath = pathname.slice(1);
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content={Astro.generator} />
+<link rel="alternate" type="application/rss+xml" title="Thadeus Smith" href={new URL("rss.xml", Astro.site)}/>
+<link rel="sitemap" href="/sitemap-index.xml" />
+<script defer data-domains="thadeussmith.com,reader5567.github.io" src="https://cloud.umami.is/script.js" data-website-id="9e360623-16d5-4cbd-9d87-24ef770232b9"></script>
+<style>
+.section{
+border-left: 6px solid;
+padding-left: 0.5rem;
+}
+.resume{
+display: flex;
+flex-wrap:wrap;
+justify-content: space-between;
+margin: 0 0 2rem ;
+padding: 0.25rem;
+}
+.position{
+font-weight: 650;
+padding: 0.1em 0;
+flex-basis: 100%;
+border-bottom: 3px solid black;
+}
+.date{
+padding: 0.1em 0;
+flex-shrink: 0;
+flex-basis: 40%;
+text-align: right;
+}
+.company{
+padding: 0.1em 0;
+flex-basis: 50%;
+flex-grow: 1;
+flex-shrink: 1;
+margin-right: 1em;
+}
+.description{
+flex-basis: 100%;
+font-size: 85%;
+opacity: 70%;
+margin-top: 0.5rem;
+}
+
+@media screen and (max-width: 800px) {
+  .section{
+    border-left: 4px solid;
+    padding-left: 0.25rem;
+  }
+}
+
+</style>
+<title>Thadeus Smith</title>
+</head>
+<body>
+<Header />
+<main>
+<div class="section">
+<h2>Experience</h2>
+
+<p class="resume"><span class="position">Speech and Debate Teacher</span><br> 
+<span class="company">American Heritage Schools-Broward Campus</span> <span class="date">June 2024–Present</span>
+<span class="description">Lead speech and debate classes in both the Lower and Upper schools with students ranging from 5th grade to 12th grade. My classes include "Intro to Speech and Debate," "Individual Events," and "Advanced Speech and Debate."</span>
+</p>
+
+<p class="resume"><span class="position">Permanent Substitute Teacher</span><br>
+<span class="company">American Heritage Schools-Broward Campus</span> <span class="date">August 2023–June 2024</span>
+</p>
+</div>
+
+<div class="section">
+<h2>Education</h2>
+
+<p class="resume"><span class="position">MA, Theory and Practice of Human Rights</span><br>
+ <span class="company">University of Essex</span> <span class="date">September 2021–June 2022</span>
+<span class="description">Dissertation: "Contextualizing Trans Children's Human Rights Violations in the United States."</span>
+</p>
+</div>
+
+<div class="section">
+<h2>Volunteering</h2>
+
+<p class="resume"><span class="position">Volunteer Editor</span><br>
+ <span class="company">Wikipedia</span> <span class="date">August 2016–Present</span>
+</p>
+</div>
+
+</main>
+</body>
+</html>
