@@ -4,11 +4,11 @@ date: 2024-12-04
 layout: ../../post-layout.astro
 ---
 
-## Contextual Information
+### Contextual Information
 
-I graduated from the University of Essex in March 2023 with a Master of Arts degree in the Theory and Practice of Human Rights. To graduate, I had to complete a 12,000 word dissertation on a human rights topic of my choosing. This is my dissertation. 
+I graduated from the University of Essex in March 2023 with a Master of Arts degree in the Theory and Practice of Human Rights. To graduate, I had to complete a 12,000 word dissertation on a human rights topic of my choosing. I chose to write about the rise of anti-transgender legislation in the United States, especially those laws focused on children and their gender expression.
 
-## Acknowledgments
+### Acknowledgments
 
 Thank you to my supervisor, Rees Johnson, for the guidance and advice throughout this project (and for forcing me to finally read Foucault). I have never worked on a project this large or personal before and would not have made it this far without your support. I also want to thank my undergraduate supervisors, Dr. Michael Artime and Dr. Marnie Ritchie. They taught me the foundations of critical research and showed me that it did not have to be cold and detached but could be undertaken with compassion. I would not have made it this far without their guidance early in my academic career.
 
@@ -18,14 +18,18 @@ For the last few years, I’ve had the incredible privilege of coaching a middle
 
 Finally, this project is dedicated to Charley Gadd, taken from this world far too soon. I miss the warmth and humor you injected into our debate rounds. I miss our talks at Top Bar about politics, film, music, and art. I miss your poetry, which was beautiful without being sappy. I remember our last conversation, where we talked about death while I walked you to the bus stop. You said we’d finish that conversation next semester. I wish we had the chance, and I wish you could’ve known your impact on me.
 
-## Abstract
+### Abstract
 
 The growing trend in the United States towards anti-transgender legislation has contributed to a social environment in which transgender children’s fundamental rights to self-expression and life are threatened. Previous research into this trend has examined anti-transgender legislation in the political and social context, however, there have been few attempts to philosophically examine anti-transgender legislation. Using Michel Foucault’s understanding of discourse as it relates to power, this paper contextualizes anti-transgender legislation in the United States from a Foucauldian perspective. In doing so, it proposes that a “scientactic” discourse is created, one that attempts to justify itself using scientific language without using a scientific method. This paper argues that while anti-transgender legislation in the United States attempts to enshrine biological sex as the sole determinant of gender, it does so at the expense of legitimate scientific reasoning and ignores the potential human rights violations that result.
 
-## Chapter 1: Introduction
+### Chapter 1: Introduction
 
-Some scholars say, "[g]ender affirmative approaches to supporting transgender children are becoming mainstream."[^1]
+Some scholars say, "[g]ender affirmative approaches to supporting transgender children are becoming mainstream."[^1] However, this is only part of the story, particularly in the United States (US). The US is witnessing a concerted mobilization against the rights of trans children, especially their rights to be treated according to their gender identity or receive gender-affirming care. In 2021, for instance,  Arkansas criminalized providing gender-affirming care to any gender dysphoria patient under 18—or referring such a person to another provider for gender-affirming care (presumably to limit the possibility of seeking care in another state).[^2] This blatant criminalization of gender-affirming care for minors is not isolated to one or two states in the American South. As of March 2022, fifteen states had passed similar bills or  considered them.[^3]  While some of these laws, such as Arkansas’, are trapped in legal limbo, others have gone into full effect.[^4]  Some of these bills go beyond simply placing restrictions on doctors. Bills in ten states are attempting to allow civil lawsuits against doctors, six place financial penalties on parents, and Texas and Missouri classify gender-affirming care as “child abuse.”[^5]
 
-## Footnotes
+This dissertation places the rights of transgender (or trans) children in a broader human rights perspective, mapping the landscape of US legislation that threatens those rights (along with the rights of parents and medical providers). Additionally, it treats the legislation itself as an emerging disciplinary discourse engineered to place transgender youth outside the bounds of the “normal,” marginalizing them. In treating legislation as discourse, this dissertation utilizes the work of Michel Foucault and seeks to reconcile a Foucauldian approach with a rights-centered one. To do this, it argues that trans children’s rights, when properly afforded and recognized, hold open a space for indeterminacy and contestation that Foucault would acknowledge as a site for the emergence of a politics of counter-discourse.
 
 [^1]: Cal Horton, “Thriving or Surviving? Raising Our Ambition for Trans Children in Primary and Secondary Schools,” *Frontiers in Sociology* 5 (August 11, 2020): 1, https://doi.org/10.3389/fsoc.2020.00067
+[^2]: Simona Martin, Elizabeth S. Sandberg, and Daniel E. Shumer, “Criminalization of Gender-Affirming Care — Interfering with Essential Treatment for Transgender Children and Adolescents,” *New England Journal of Medicine* 385, no. 7 (August 12, 2021): 579, https://doi.org/10.1056/NEJMp2106314.
+[^3]: Kerith J. Conron et al., “Prohibiting Gender-Affirming Medical Care for Youth” (Los Angeles: Williams Institute, March 2022), 2, https://williamsinstitute.law.ucla.edu/wp-content/uploads/Trans-Youth-Health-Bans-Mar-2022.pdf.
+[^4]: “Federal Court Blocks Arkansas Ban on Gender-Affirming Care for Trans Youth from Moving Forward,” American Civil Liberties Union, July 21, 2021, https://www.aclu.org/press-releases/federal-court-blocks-arkansas-ban-gender-affirming-care-trans-youth-moving-forward.
+[^5]: Conron et al., “Prohibiting Gender-Affirming Medical Care for Youth,” 2–3.
