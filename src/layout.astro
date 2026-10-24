@@ -1,0 +1,30 @@
+---
+// Shared page shell: <head>, header, footer. Every page uses this so that
+// site-wide things (RSS link, metadata, credit) live in exactly one place.
+import './global.css';
+import Header from './header.astro';
+import Footer from './footer.astro';
+const { title, description, rows = [], showSite = true } = Astro.props;
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content={Astro.generator} />
+<meta name="description" content={description} />
+<link rel="alternate" type="application/rss+xml" title="Thadeus Smith" href={new URL("feed.xml", Astro.site)}/>
+<link rel="sitemap" href="/sitemap-index.xml" />
+<!-- rel="me" links verify that these profiles and this site belong to the same person (used by IndieWeb sign-in). -->
+<link rel="me" href="https://github.com/reader5567">
+<link rel="me" href="https://en.wikipedia.org/wiki/User:ThadeusOfNazereth">
+<title>{title}</title>
+<slot name="head" />
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<Header />
+<slot />
+<Footer rows={rows} showSite={showSite} />
+</body>
+</html>
