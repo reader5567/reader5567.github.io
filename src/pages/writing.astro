@@ -1,6 +1,8 @@
 ---
 import Layout from '../layout.astro';
-const posts = await Astro.glob('./writing/*.md');
+// import.meta.glob replaces the removed Astro.glob (Astro 6). Eager mode
+// returns the modules directly rather than a map of loader functions.
+const posts = Object.values(import.meta.glob('./writing/*.md', { eager: true }));
 posts.sort((a, b) => Date.parse(b.frontmatter.date) - Date.parse(a.frontmatter.date));
 ---
 <Layout title="Thadeus Smith — Writing" description="Essays and longer writing by Thadeus Smith.">

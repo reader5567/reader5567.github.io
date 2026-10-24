@@ -299,7 +299,7 @@ These pieces of legislation also, whether passed or not, contribute to an emergi
 [^39]: Chloe Hadjimatheou, “Christine Jorgensen: 60 Years of Sex Change Ops,” _BBC News_, November 30, 2012, sec. Magazine, https://www.bbc.com/news/magazine-20544095.
 [^40]: “BARS MARRIAGE PERMIT; Clerk Rejects Proof of Sex of Christine Jorgensen,” _The New York Times_, April 4, 1959, sec. Archives, https://www.nytimes.com/1959/04/04/archives/bars-marriage-permit-clerk-rejects-proof-of-sex-of-christine.html.
 [^41]: Gillian Brockell, “The Transgender Women at Stonewall Were Pushed out of the Gay Rights Movement. Now They Are Getting a Statue in New York.,” _Washington Post_, June 12, 2019, https://www.washingtonpost.com/history/2019/06/12/transgender-women-heart-stonewall-riots-are-getting-statue-new-york/.
-[^42]: Katrina C Rose, “Reflections at the Silver Anniversary of the First Trans-Inclusive Gay Rights Statute: Ruminations on the Law and Its History -- and Why Both Should Be Defended in an Era of Anti-Trans ‘Bathroom Bills,’” _University of Massachusetts Law Review_ 14, no. 1 (2019): 107–8.
+[^42]: Katrina C Rose, “Reflections at the Silver Anniversary of the First Trans-Inclusive Gay Rights Statute: Ruminations on the Law and Its History — and Why Both Should Be Defended in an Era of Anti-Trans ‘Bathroom Bills,’” _University of Massachusetts Law Review_ 14, no. 1 (2019): 107–8.
 [^43]: _Boys Don’t Cry_ (Searchlight Pictures, 1999).
 [^44]: Nokoff, “Medical Interventions for Transgender Youth.”
 [^45]: Martin, Sandberg, and Shumer, “Criminalization of Gender-Affirming Care,” 580.

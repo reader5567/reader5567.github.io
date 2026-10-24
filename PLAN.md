@@ -30,14 +30,33 @@ session) starts from the same page. Edit it as decisions change.
   `rel="me"` links to GitHub and Wikipedia (groundwork for the IndieWeb
   webring sign-in).
 
-## Pull request 2: Astro upgrade
+## Pull request 2: Astro upgrade (done)
 
-- Move from Astro 4 (legacy, last patched August 2025) to the current
-  major release. Success criterion: every page renders identically.
-- `Astro.glob` (deprecated) replaced in the writing index and RSS feed.
-- Node version in `.github/workflows/astro.yml` bumped as required.
-- If the upgrade proves troublesome, close the PR and build PR 3 on
-  Astro 4 instead.
+- Moved from Astro 4.16 to Astro 7.4 (through 5 and 6 in one step).
+  Verified by building both versions and comparing every page: the
+  Writing, Now and essay pages are pixel-identical at desktop and phone
+  widths; the sitemap is byte-identical; the RSS feed differs by one
+  trailing space.
+- `Astro.glob` (removed in Astro 6) replaced with `import.meta.glob` in
+  the writing index. The RSS feed awaits `compiledContent()`, which has
+  returned a Promise since Astro 5.
+- Node 22 in `.github/workflows/astro.yml` and `.nvmrc` (Astro 7 needs
+  22.23.4 or newer).
+- Two settings in `astro.config.mjs` keep the output matching the old
+  build. `compressHTML: true` because the Astro 7 default (`'jsx'`)
+  removes the spaces between the nav links. A conservative Vite
+  `cssTarget` because the new minifier otherwise drops the `100vh`
+  fallback and rewrites `(max-width: 800px)` as `(width <= 800px)`,
+  which pre-2023 Safari would not understand.
+- Astro 7 also swaps the Markdown processor (remark → Sätteri). The only
+  effect on the essay was one `--` rendering as an en dash instead of an
+  em dash; the source now has a literal em dash so it no longer depends
+  on the processor.
+- One rendering change, deliberate: the Experience `<div>` on the résumé
+  was left unclosed in an edit after PR 1, so Education and Volunteering
+  were nested inside it and drew a doubled left border. The new compiler
+  refuses unclosed tags, so the div is closed and each section has a
+  single border again, as in PR 1.
 
 ## Pull request 3: Elsewhere, Links, webrings, nightly rebuild
 
