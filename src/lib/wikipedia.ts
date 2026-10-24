@@ -21,6 +21,12 @@ export interface Article {
   dyk: boolean;
   /** Parenthetical remark from the user page, e.g. "translated from Spanish", or empty */
   note: string;
+  /** Works (books, films, plays) are marked ''like this'' on the user page */
+  italic: boolean;
+  /** The part of the title to italicize, e.g. "Sam" in "Sam (Goodman novel)" */
+  main: string;
+  /** Text after `main`, e.g. " (Goodman novel)"; empty when the whole title is italic */
+  suffix: string;
 }
 
 export interface ContributionGroup {
@@ -45,6 +51,19 @@ function plain(wikitext: string): string {
     .replace(/'{2,}/g, '')
     .replace(/\s+/g, ' ')
     .trim();
+}
+
+// Wikipedia style italicizes a work's title but not the disambiguator after
+// it: ''Sam'' (Goodman novel). The user page is not consistent about where
+// the quote marks go, so the disambiguator is recognised by its wording
+// rather than by the markup. "(-noun)" in a play's title is not matched.
+const DISAMBIGUATOR = /^(.*?)(\s\([^()]*\b(?:novel|novella|book|play|film|poem|memoir|collection|story)\))$/i;
+
+function splitTitle(raw: string): Pick<Article, 'italic' | 'main' | 'suffix'> {
+  if (!raw.includes("''")) return { italic: false, main: raw, suffix: '' };
+  const title = raw.replace(/'{2,}/g, '').trim();
+  const m = title.match(DISAMBIGUATOR);
+  return m ? { italic: true, main: m[1], suffix: m[2] } : { italic: true, main: title, suffix: '' };
 }
 
 /** Parse the "My contributions" section of the user page's wikitext. Exported for testing. */
@@ -74,6 +93,7 @@ export function parseContributions(wikitext: string): ContributionGroup[] {
       rating: RATING_LABELS[link[1].trim().toLowerCase()] ?? '',
       dyk: /\{\{\s*icon\s*\|\s*dyk\s*\}\}/i.test(line),
       note,
+      ...splitTitle(link[2].trim()),
     });
   }
   const populated = groups.filter((g) => g.articles.length > 0);

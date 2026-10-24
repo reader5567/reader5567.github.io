@@ -43,6 +43,28 @@ opacity: 70%;
 margin-top: 0.5rem;
 }
 
+/* Representative h-card (https://microformats.org/wiki/representative-h-card-authoring):
+   name, photo and note for IndieWeb tools such as the webring directory. */
+.intro{
+display: flex;
+gap: 1rem;
+align-items: flex-start;
+margin: 0 0 2rem;
+}
+.intro img{
+width: 8rem;
+height: auto;
+flex-shrink: 0;
+}
+.intro p{
+margin: 0 0 0.5rem;
+}
+.credit{
+font-size: 70%;
+font-family: monospace;
+font-weight: bold;
+}
+
 @media screen and (max-width: 800px) {
   .section{
     border-left: 4px solid;
@@ -51,6 +73,16 @@ margin-top: 0.5rem;
 }
 </style>
 <main id="main">
+<div class="h-card intro">
+<img class="u-photo" src="/thadeus.jpg" width="480" height="720" alt="Thadeus Smith">
+<div>
+<p class="p-note">Educator, writer, and Wikipedia administrator from the Pacific Northwest, now living in Boston. I love books, movies, Wikipedia, and speech &amp; debate.</p>
+<p class="credit">Photo: <a href="https://commons.wikimedia.org/wiki/File:069WCNA25_HariA_DSCF3207_(cropped).jpg">Hari Adivarekar</a>, CC BY 4.0</p>
+</div>
+<data class="p-name" value="Thadeus Smith"></data>
+<data class="u-url u-uid" value="https://thadeussmith.com/"></data>
+</div>
+
 <div class="section">
 <h2>Experience</h2>
 
