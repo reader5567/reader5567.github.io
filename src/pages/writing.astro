@@ -1,11 +1,22 @@
 ---
 import Layout from '../layout.astro';
+import { site } from '../site';
+import { shortDate } from '../lib/fetch';
+import { recentFilms, LETTERBOXD_USER } from '../lib/letterboxd';
+import { photoOfTheDay, COMMONS_USER } from '../lib/commons';
+import { contributions, USER_PAGE_URL } from '../lib/wikipedia';
+
 // import.meta.glob replaces the removed Astro.glob (Astro 6). Eager mode
 // returns the modules directly rather than a map of loader functions.
 const posts = Object.values(import.meta.glob('./writing/*.md', { eager: true }));
 posts.sort((a, b) => Date.parse(b.frontmatter.date) - Date.parse(a.frontmatter.date));
+
+// Everything under "Elsewhere" is fetched while the site builds. A failed
+// fetch fails the build, and GitHub Pages keeps serving the last good copy.
+const [films, photo, groups] = await Promise.all([recentFilms(), photoOfTheDay(), contributions()]);
+const recent = films.slice(0, site.recentFilms);
 ---
-<Layout title="Thadeus Smith — Writing" description="Essays and longer writing by Thadeus Smith.">
+<Layout title="Thadeus Smith — Writing" description="Essays by Thadeus Smith, plus what he is watching, photographing, and writing on Wikipedia.">
 <style>
 ul.posts{
 list-style: none;
@@ -28,10 +39,131 @@ font-size: 80%;
 font-family: monospace;
 font-weight: bold;
 }
+/* "Skip to Elsewhere": the posts list is short, but the link also serves
+   keyboard and screen-reader users who want the live sections. */
+.jump{
+font-size: 80%;
+font-family: monospace;
+font-weight: bold;
+margin: 0 0 1rem;
+}
+/* Elsewhere: the bordered-section style from the résumé. */
+.section{
+border-left: 6px solid;
+padding-left: 0.5rem;
+margin: 1rem 0 2rem;
+}
+.section h3{
+margin: 0.5rem 0;
+}
+.section h4{
+font-size: 1rem;
+font-family: monospace;
+font-weight: bold;
+text-transform: uppercase;
+margin: 1rem 0 0.25rem;
+}
+ul.films{
+list-style: none;
+margin: 0;
+padding: 0;
+}
+ul.films li{
+margin: 0 0 1rem;
+}
+.film{
+font-weight: 650;
+}
+.meta{
+font-size: 80%;
+font-family: monospace;
+font-weight: bold;
+}
+.excerpt{
+font-size: 85%;
+opacity: 70%;
+}
+ul.articles{
+list-style: none;
+margin: 0;
+padding: 0;
+}
+ul.articles li{
+display: inline;
+}
+ul.articles li:not(:last-child)::after{
+content: " · ";
+}
+.tag{
+font-size: 70%;
+font-family: monospace;
+font-weight: bold;
+vertical-align: 0.15em;
+}
+.more{
+font-size: 80%;
+font-family: monospace;
+font-weight: bold;
+margin: 0.5rem 0 0;
+}
+.section figure{
+margin: 0;
+}
+.section figcaption{
+font-size: 85%;
+margin-top: 0.5rem;
+}
+@media screen and (max-width: 800px) {
+  .section, li.post{
+    border-left: 4px solid;
+    padding-left: 0.25rem;
+  }
+}
 </style>
 <main id="main">
+<p class="jump"><a href="#elsewhere">Skip to Elsewhere ↓</a></p>
 <ul class="posts">
 {posts.map((post) => <li class="post"><a href={post.url}><span class="title">{post.frontmatter.title}</span></a><br> <span class="date">{new Date(post.frontmatter.date.replace('Z', '')).toDateString()}</span></li>)}
 </ul>
+
+<h2 id="elsewhere">Elsewhere</h2>
+
+<div class="section">
+<h3>Letterboxd</h3>
+<ul class="films">
+{recent.map((f) => (
+  <li>
+    <a href={f.link}><span class="film">{f.title}</span></a>
+    <span class="meta">({f.year}){f.stars && ` ${f.stars}`}{f.liked && ' ♥'} · {shortDate(f.watched)}{f.rewatch && ' · rewatch'}</span>
+    {f.excerpt && <><br><span class="excerpt">{f.excerpt}</span></>}
+  </li>
+))}
+</ul>
+<p class="more"><a href={`https://letterboxd.com/${LETTERBOXD_USER}/`}>More on Letterboxd →</a></p>
+</div>
+
+<div class="section">
+<h3>Photo of the day</h3>
+<figure>
+<img src="/photo-of-the-day.jpg" width={photo.imageWidth} height={photo.imageHeight} alt={photo.caption} loading="lazy">
+<figcaption>{photo.caption}{photo.taken && ` (${shortDate(photo.taken)})`}. <a href={photo.pageUrl}>On Wikimedia Commons</a>{photo.license && `, ${photo.license}`}.</figcaption>
+</figure>
+<p class="more"><a href={`https://commons.wikimedia.org/wiki/Special:ListFiles/${COMMONS_USER}`}>All my uploads →</a></p>
+</div>
+
+<div class="section">
+<h3>Wikipedia</h3>
+<p>Articles I have written or substantially expanded, kept up to date from <a href={USER_PAGE_URL}>my user page</a>. GA and FA mark Good and Featured articles; DYK means the article appeared on the Main Page.</p>
+{groups.map((g) => (
+  <>
+    <h4>{g.heading}</h4>
+    <ul class="articles">
+      {g.articles.map((a) => (
+        <li><a href={a.url} title={a.note || undefined}>{a.title}</a>{a.rating && <> <span class="tag">{a.rating}</span></>}{a.dyk && <> <span class="tag">DYK</span></>}</li>
+      ))}
+    </ul>
+  </>
+))}
+</div>
 </main>
 </Layout>

@@ -1,5 +1,7 @@
 # build output
 dist/
+# local cache of fetched data (see src/lib/fetch.ts)
+.fetch-cache/
 # generated types
 .astro/
 

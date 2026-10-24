@@ -60,7 +60,7 @@ session) starts from the same page. Edit it as decisions change.
   refuses unclosed tags, so the div is closed and each section has a
   single border again, as in PR 1.
 
-## Pull request 3: Elsewhere, Links, webrings, nightly rebuild
+## Pull request 3: Elsewhere, Links, webrings, nightly rebuild (done)
 
 - Build-time fetchers (no browser JavaScript) for:
   - Letterboxd: `https://letterboxd.com/thadeusofnaz/rss/`. Show title,
@@ -84,6 +84,31 @@ session) starts from the same page. Edit it as decisions change.
 - Nightly `schedule:` trigger in the Pages workflow so the fetched data
   stays fresh. If a fetch fails, the build fails and GitHub Pages keeps
   serving the last good version.
+
+Notes from the build:
+
+- Fetchers live in `src/lib/`; each URL is fetched once per build and a
+  failed fetch throws. `FETCH_CACHE_DIR` enables an offline cache for
+  local work.
+- The Commons photo is served from this site (`/photo-of-the-day.jpg`,
+  1280px wide) rather than hotlinked, so visitors make no request to
+  Wikimedia. "Original" means any upload without "crop" in its name and
+  at least 1000px wide; the pick is `day number mod count` over the
+  uploads oldest-first, so it changes daily and stays stable as new
+  uploads arrive.
+- The Wikipedia section renders the user page's own headings
+  (Biographies, Books, Elections, Other articles). GA/FA/FL/A and DYK
+  from the `{{icon}}` templates appear as small text tags; start/C/stub
+  classes are not shown. Parenthetical notes ("Translated from Spanish")
+  are kept as link tooltips.
+- The Letterboxd excerpts drop the "On list: …" boilerplate the feed
+  appends to reviews written from a list.
+- `/links` is a static copy of the reading lists (not synced), reachable
+  from a "Links" row in the footer; the nav stays "Résumé, Writing, Now".
+- Webring URLs are pasted into `src/site.ts`; nothing renders until they
+  are filled in. The IndieWeb links go in the footer, which is on the
+  homepage as the ring's checker requires.
+- Schedule: 06:23 UTC daily.
 
 ## Deliberately not planned
 
