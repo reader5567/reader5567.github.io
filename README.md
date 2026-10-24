@@ -43,6 +43,10 @@ The resume HTML is comprised of a single paragraph representing a position. Each
 
 Dates use an en dash (–), as in `June 2023–June 2026`.
 
+## h-card
+
+The top of the résumé (`src/pages/index.astro`) is a [representative h-card](https://microformats.org/wiki/representative-h-card-authoring): `p-name`, `u-photo`, `p-note`, and a `u-url`/`u-uid` equal to the homepage URL. IndieWeb tools, including the webring directory, read the name, photo and note from it. The photo is `public/thadeus.jpg`, by Hari Adivarekar (CC BY 4.0) from [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:069WCNA25_HariA_DSCF3207_(cropped).jpg); keep the credit line if you swap it.
+
 ## Now page
 
 `src/pages/now.astro` is the "now" page (who I am, what I'm doing lately). Edit the paragraphs under "What I'm doing now" whenever things change; the Updated date in the footer is filled in automatically when the site builds. `/about` redirects here.

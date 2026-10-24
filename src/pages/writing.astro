@@ -158,7 +158,7 @@ margin-top: 0.5rem;
     <h4>{g.heading}</h4>
     <ul class="articles">
       {g.articles.map((a) => (
-        <li><a href={a.url} title={a.note || undefined}>{a.title}</a></li>
+        <li><a href={a.url} title={a.note || undefined}>{a.italic ? <><i>{a.main}</i>{a.suffix}</> : a.title}</a></li>
       ))}
     </ul>
   </>
