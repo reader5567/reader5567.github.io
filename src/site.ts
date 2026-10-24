@@ -7,8 +7,9 @@ export const site = {
   // page, including the homepage where the webring's checker looks.
   // Leave both empty and nothing is rendered.
   indieWebRing: {
-    previous: '',
-    next: '',
+    previous: 'https://xn--sr8hvo.ws/previous',
+    next: 'https://xn--sr8hvo.ws/next',
+    approved: true,
   },
 
   // Wayward Webring (https://waywardweb.org/). Once the application is
