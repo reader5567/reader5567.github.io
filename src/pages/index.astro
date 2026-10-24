@@ -1,5 +1,8 @@
 ---
 import Layout from '../layout.astro';
+import { site } from '../site';
+const { profile } = site;
+const home = new URL('/', Astro.site).href;
 ---
 <Layout
   title="Thadeus Smith"
@@ -43,28 +46,6 @@ opacity: 70%;
 margin-top: 0.5rem;
 }
 
-/* Representative h-card (https://microformats.org/wiki/representative-h-card-authoring):
-   name, photo and note for IndieWeb tools such as the webring directory. */
-.intro{
-display: flex;
-gap: 1rem;
-align-items: flex-start;
-margin: 0 0 2rem;
-}
-.intro img{
-width: 8rem;
-height: auto;
-flex-shrink: 0;
-}
-.intro p{
-margin: 0 0 0.5rem;
-}
-.credit{
-font-size: 70%;
-font-family: monospace;
-font-weight: bold;
-}
-
 @media screen and (max-width: 800px) {
   .section{
     border-left: 4px solid;
@@ -73,14 +54,15 @@ font-weight: bold;
 }
 </style>
 <main id="main">
-<div class="h-card intro">
-<img class="u-photo" src="/thadeus.jpg" width="480" height="720" alt="Thadeus Smith">
-<div>
-<p class="p-note">Educator, writer, and Wikipedia administrator from the Pacific Northwest, now living in Boston. I love books, movies, Wikipedia, and speech &amp; debate.</p>
-<p class="credit">Photo: <a href="https://commons.wikimedia.org/wiki/File:069WCNA25_HariA_DSCF3207_(cropped).jpg">Hari Adivarekar</a>, CC BY 4.0</p>
-</div>
-<data class="p-name" value="Thadeus Smith"></data>
-<data class="u-url u-uid" value="https://thadeussmith.com/"></data>
+<!-- Representative h-card (https://microformats.org/wiki/representative-h-card-authoring).
+     Invisible: <data> elements render nothing. The webring directory reads the
+     name, photo and note from here; the visible version is on the Now page.
+     Values come from `profile` in src/site.ts. -->
+<div class="h-card">
+<data class="p-name" value={profile.name}></data>
+<data class="u-photo" value={new URL(profile.photo, Astro.site).href}></data>
+<data class="p-note" value={profile.note}></data>
+<data class="u-url u-uid" value={home}></data>
 </div>
 
 <div class="section">

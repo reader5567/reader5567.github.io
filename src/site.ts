@@ -24,4 +24,19 @@ export const site = {
 
   // How many recent Letterboxd entries the Writing page shows.
   recentFilms: 8,
+
+  // Who you are, in one place. The Now page shows the photo and note; the
+  // homepage carries the same details as an invisible h-card, which is what
+  // the IndieWeb webring directory reads (it only looks at the homepage).
+  // Edit the note here and both pages change together.
+  profile: {
+    name: 'Thadeus Smith',
+    note: 'I am an educator, writer, and Wikipedia administrator from the Pacific Northwest, now living in Boston. I love books, movies, Wikipedia, and speech & debate.',
+    photo: '/thadeus.jpg',
+    photoWidth: 480,
+    photoHeight: 720,
+    photoCredit: 'Hari Adivarekar',
+    photoLicense: 'CC BY 4.0',
+    photoSource: 'https://commons.wikimedia.org/wiki/File:069WCNA25_HariA_DSCF3207_(cropped).jpg',
+  },
 };

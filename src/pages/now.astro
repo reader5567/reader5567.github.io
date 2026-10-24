@@ -1,5 +1,7 @@
 ---
 import Layout from '../layout.astro';
+import { site } from '../site';
+const { profile } = site;
 // A "now" page: who I am in two sentences, then what I'm up to lately.
 // The convention comes from Derek Sivers (nownownow.com). Update the
 // "What I'm doing now" section whenever life changes; the footer's
@@ -7,8 +9,39 @@ import Layout from '../layout.astro';
 ---
 <Layout title="Thadeus Smith – Now" description="Who Thadeus Smith is and what he is doing now.">
 <article id="main">
+<style>
+/* Photo beside the opening paragraph; the image keeps the site's 6px border. */
+.intro{
+display: flex;
+gap: 1rem;
+align-items: flex-start;
+margin: 0 0 1rem;
+}
+.intro img{
+width: 8rem;
+height: auto;
+flex-shrink: 0;
+}
+.intro p{
+margin: 0 0 0.5rem;
+}
+.credit{
+font-size: 70%;
+font-family: monospace;
+font-weight: bold;
+}
+</style>
 <h2>Now</h2>
-<p>Hello! My name (as the URL so helpfully indicates) is Thadeus Smith. I am an educator, writer, and Wikipedia administrator from the Pacific Northwest, now living in Boston. I love books, movies, Wikipedia, and speech & debate.</p>
+<!-- Also marked up as an h-card; the note text lives in src/site.ts so this
+     paragraph and the homepage's hidden h-card always match. -->
+<div class="intro h-card">
+<img class="u-photo" src={profile.photo} width={profile.photoWidth} height={profile.photoHeight} alt={profile.name}>
+<div>
+<p>Hello! My name (as the URL so helpfully indicates) is <span class="p-name">{profile.name}</span>. <span class="p-note">{profile.note}</span></p>
+<p class="credit">Photo: <a href={profile.photoSource}>{profile.photoCredit}</a>, {profile.photoLicense}</p>
+</div>
+<data class="u-url" value={new URL('/', Astro.site).href}></data>
+</div>
 
 <h3>What I'm doing now</h3>
 <p><b>Teaching.</b> I am the Director of Education at Lumos Debate, where I supervise our Boston-area classes, train our instructors, and run monthly tournaments. I am also a freelance speech & debate coach at national circuit competitions, primarily for the American Heritage School in Florida, and edit the Big Questions and Public Forum briefs for Champion Briefs.</p>
