@@ -57,7 +57,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: "22" # Astro 7 requires Node 22.23.4 or newer
+          node-version: "24" # Astro 7 requires Node 22.23.4+; the runner's cached Node 22 was 22.23.3, so use the 24 LTS line
           cache: ${{ steps.detect-package-manager.outputs.manager }}
           cache-dependency-path: ${{ env.BUILD_PATH }}/${{ steps.detect-package-manager.outputs.lockfile }}
       - name: Setup Pages

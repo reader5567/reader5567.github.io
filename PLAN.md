@@ -40,8 +40,10 @@ session) starts from the same page. Edit it as decisions change.
 - `Astro.glob` (removed in Astro 6) replaced with `import.meta.glob` in
   the writing index. The RSS feed awaits `compiledContent()`, which has
   returned a Promise since Astro 5.
-- Node 22 in `.github/workflows/astro.yml` and `.nvmrc` (Astro 7 needs
-  22.23.4 or newer).
+- Node 24 in `.github/workflows/astro.yml` and `.nvmrc`. Astro 7 needs
+  22.23.4 or newer; the first attempt pinned "22", but the GitHub runner's
+  cached Node 22 was 22.23.3 and the build refused to start, so the
+  workflow uses the 24 LTS line instead.
 - Two settings in `astro.config.mjs` keep the output matching the old
   build. `compressHTML: true` because the Astro 7 default (`'jsx'`)
   removes the spaces between the nav links. A conservative Vite
