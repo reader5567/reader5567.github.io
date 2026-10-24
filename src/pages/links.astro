@@ -1,0 +1,89 @@
+---
+import Layout from '../layout.astro';
+import { site } from '../site';
+// A links page. Seeded (October 2026) from the "Recommended Reading" lists
+// on https://en.wikipedia.org/wiki/User:ThadeusOfNazereth; unlike the
+// Writing page's Wikipedia section this is a copy, not a live fetch, so
+// edit freely. The Wayward Webring block appears once src/site.ts says the
+// application was approved.
+const ring = site.waywardWebring;
+---
+<Layout title="Thadeus Smith – Links" description="Books and websites Thadeus Smith recommends.">
+<style>
+ul.links{
+list-style: none;
+margin: 0 0 2rem;
+padding: 0;
+}
+ul.links li{
+border-left: 6px solid;
+padding-left: 0.5rem;
+margin: 1rem 0;
+}
+.name{
+font-weight: 650;
+}
+.about{
+font-size: 85%;
+opacity: 70%;
+display: block;
+margin-top: 0.25rem;
+}
+.webring{
+border-left: 6px solid;
+padding-left: 0.5rem;
+margin: 1rem 0 2rem;
+}
+.webring p{
+margin: 0.5rem 0;
+}
+@media screen and (max-width: 800px) {
+  ul.links li, .webring{
+    border-left: 4px solid;
+    padding-left: 0.25rem;
+  }
+}
+</style>
+<main id="main">
+<h2>Links</h2>
+<p>Things I recommend. The reading lists started life on <a href="https://en.wikipedia.org/wiki/User:ThadeusOfNazereth">my Wikipedia user page</a>.</p>
+
+<h3>Fiction</h3>
+<ul class="links">
+<li><span class="name"><a href="https://en.wikipedia.org/wiki/This_Is_How_You_Lose_the_Time_War"><i>This Is How You Lose the Time War</i></a></span> by <a href="https://en.wikipedia.org/wiki/Amal_El-Mohtar">Amal El-Mohtar</a> and <a href="https://en.wikipedia.org/wiki/Max_Gladstone">Max Gladstone</a><span class="about">My favorite book of all time. It's a lyrical, poignant love story that contains one of the most beautiful descriptions of love I've ever read.</span></li>
+<li><span class="name"><a href="https://en.wikipedia.org/wiki/Piranesi_(novel)"><i>Piranesi</i></a></span> by <a href="https://en.wikipedia.org/wiki/Susanna_Clarke">Susanna Clarke</a><span class="about">A quick, fun read about a 'lil guy wandering a mysterious house, and I'm afraid I can't share more than that!</span></li>
+<li><span class="name"><a href="https://en.wikipedia.org/wiki/Venomous_Lumpsucker"><i>Venomous Lumpsucker</i></a></span> by <a href="https://en.wikipedia.org/wiki/Ned_Beauman">Ned Beauman</a><span class="about">An engaging work of climate fiction with more than a little bit of that classic British self-deprecation.</span></li>
+</ul>
+
+<h3>Non-fiction</h3>
+<ul class="links">
+<li><span class="name"><a href="https://en.wikipedia.org/wiki/Lulu_Miller"><i>Why Fish Don't Exist</i></a></span> by <a href="https://en.wikipedia.org/wiki/Lulu_Miller">Lulu Miller</a><span class="about">A book about the incredible life and disturbing contradictions of <a href="https://en.wikipedia.org/wiki/David_Starr_Jordan">David Starr Jordan</a>. I started reading this on my break at work and was so enthralled that I stayed three hours late to finish it.</span></li>
+<li><span class="name"><a href="https://en.wikipedia.org/wiki/We_Wish_to_Inform_You_That_Tomorrow_We_Will_Be_Killed_with_Our_Families"><i>We Wish to Inform You That Tomorrow We Will Be Killed with Our Families</i></a></span> by <a href="https://en.wikipedia.org/wiki/Philip_Gourevitch">Philip Gourevitch</a><span class="about">A narrative of the <a href="https://en.wikipedia.org/wiki/Rwandan_genocide">Rwandan genocide</a>. This book was assigned reading in my first year of undergrad and it formed the foundation of my life's trajectory.</span></li>
+<li><span class="name"><i>Cross-X</i></span> by Joe Miller<span class="about">Follows the <a href="https://en.wikipedia.org/wiki/Central_High_School_(Kansas_City,_Missouri)">Central High School</a> speech and debate team in their journey to the 2002 National Speech and Debate Tournament. As someone whose life was changed by participation in speech and debate, I found this book deeply moving.</span></li>
+</ul>
+
+<h3>Purely academic</h3>
+<ul class="links">
+<li><span class="name"><i>Two Dozen (or so) Arguments for God</i></span> by <a href="https://en.wikipedia.org/wiki/Jerry_Walls">Jerry Walls</a> and Trent Dougherty<span class="about">A long-form articulation of <a href="https://en.wikipedia.org/wiki/Alvin_Plantinga">Alvin Plantinga</a>'s arguments for God's existence, with a team of contributors that includes <a href="https://en.wikipedia.org/wiki/Alexander_Pruss">Alexander Pruss</a>, <a href="https://en.wikipedia.org/wiki/William_Lane_Craig">William Lane Craig</a>, and <a href="https://en.wikipedia.org/wiki/Richard_Swinburne">Richard Swinburne</a>.</span></li>
+<li><span class="name"><i>Washington's End</i></span> by Jonathan Horn<span class="about">An unusual biography that focuses almost entirely on <a href="https://en.wikipedia.org/wiki/George_Washington">George Washington</a>'s post-presidency years, providing insight into his personal struggle with slavery.</span></li>
+<li><span class="name"><i>Normal Life</i></span> by <a href="https://en.wikipedia.org/wiki/Dean_Spade">Dean Spade</a><span class="about">About the myriad of ways bureaucratic violence impacts the life of trans people in America and around the world.</span></li>
+</ul>
+
+<h3>Online reading</h3>
+<ul class="links">
+<li><span class="name"><a href="https://www.antilibrari.es/"><i>Antilibraries</i></a></span><span class="about">One of my favorite "hidden gem" websites: a collection of books that have yet to be read. It inspired me to create my own antilibrary, which quickly just became my actual library.</span></li>
+<li><span class="name"><a href="https://scp-wiki.wikidot.com/">The SCP Foundation</a></span><span class="about">The single greatest work of collaborative fiction to have ever existed. Now pushing 10,000 articles!</span></li>
+<li><span class="name"><a href="https://afkimel.wordpress.com/">Eclectic Orthodoxy</a></span><span class="about">Fr. Adrian Kimel's blog, my favorite religion website and an invaluable resource for Christian Universalism.</span></li>
+</ul>
+
+{ring.approved && (
+  <>
+    <h3>Webring</h3>
+    <div class="webring">
+      <p>This site is part of the <a href={ring.home}>Wayward Webring</a>, a ring of personal sites worth wandering.</p>
+      <p><a href={ring.previous}>← previous site</a> · <a href={ring.next}>next site →</a></p>
+    </div>
+  </>
+)}
+</main>
+</Layout>

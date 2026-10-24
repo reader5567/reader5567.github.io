@@ -7,7 +7,9 @@ See `PLAN.md` for what has been decided about the site and what is still to come
 - `src/layout.astro` is the shared page shell (head, header, footer). Every page uses it.
 - `src/header.astro` is the name and the nav. `src/footer.astro` is the footer, including the design credit.
 - `src/global.css` holds all site-wide styles, including the print stylesheet.
-- `src/pages/` holds one file per page: `index.astro` (résumé), `writing.astro`, `now.astro`, plus `feed.xml.js` for RSS.
+- `src/pages/` holds one file per page: `index.astro` (résumé), `writing.astro`, `now.astro`, `links.astro`, plus `feed.xml.js` for RSS and `photo-of-the-day.jpg.ts` for the Commons photo.
+- `src/lib/` holds the build-time fetchers (`letterboxd.ts`, `commons.ts`, `wikipedia.ts`) and the shared `fetch.ts` helper. Nothing in here runs in the visitor's browser.
+- `src/site.ts` holds settings you may want to edit by hand: webring URLs and how many films the Writing page shows.
 
 ## Resume
 
@@ -41,6 +43,28 @@ date: POST DATE
 layout: ../../post-layout.astro
 ---
 ```
+
+### Elsewhere
+
+Below the posts, the Writing page shows three sections filled in when the site builds:
+
+- **Letterboxd**: the latest diary entries from `https://letterboxd.com/thadeusofnaz/rss/`. Title, year, stars, date, and the start of the review. No posters.
+- **Photo of the day**: one of your original (uncropped) Commons uploads, chosen by the calendar date, served from this site at `/photo-of-the-day.jpg`. Files with "crop" in the name are skipped.
+- **Wikipedia**: the "My contributions" section of your user page, with its headings. Edit the user page and the site follows on the next build.
+
+The footer's "Currently" line (last film, last article edited, last upload) comes from the same fetchers.
+
+A GitHub Actions schedule rebuilds the site nightly so this stays fresh. If any fetch fails the build fails and GitHub Pages keeps serving the previous version; check the Actions tab if the Updated date in the footer stops moving.
+
+To build offline, set `FETCH_CACHE_DIR=.fetch-cache` (gitignored): responses are cached there after the first successful fetch.
+
+## Links page
+
+`src/pages/links.astro` is a hand-maintained page. It was seeded from the Recommended Reading lists on the Wikipedia user page in October 2026 but is not synced; edit it directly. The Wayward Webring block appears once `src/site.ts` marks the application approved.
+
+## Webrings
+
+`src/site.ts` holds the IndieWeb webring URLs (shown in the footer on every page, which satisfies the ring's homepage check) and the Wayward Webring URLs (shown on `/links`). Both are plain links; no scripts.
 
 ### RSS Feed
 

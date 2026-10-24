@@ -9,6 +9,12 @@ on:
   push:
     branches: ["main"]
 
+  # Nightly rebuild so the data fetched at build time (Letterboxd, Wikipedia,
+  # Commons) stays fresh. 06:23 UTC is about 2:23am in Boston. If a fetch
+  # fails the build fails and GitHub Pages keeps serving the last good version.
+  schedule:
+    - cron: "23 6 * * *"
+
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
