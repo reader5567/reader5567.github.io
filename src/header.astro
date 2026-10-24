@@ -1,12 +1,25 @@
 ---
 const pathname = new URL(Astro.request.url).pathname;
 const currentPath = pathname.slice(1);
+// "Writing" covers the posts, the Elsewhere section and the Links page, so
+// it reads as active on /links too.
+const writingActive = currentPath.startsWith("writing") || currentPath.startsWith("links");
 ---
 <header>
   <h1>Thadeus <br>Smith</h1>
   <nav>
     <a class={currentPath === "" ? "active" : ""} href="/">Résumé,</a>
-    <a class={currentPath.startsWith("writing") ? "active" : ""} href="/writing">Writing,</a>
+    <!-- Hovering or focusing "Writing" opens a small menu (CSS only, see
+         global.css). On touch screens there is no hover, so the link itself
+         goes to the Writing page, which links on to Elsewhere and Links. -->
+    <span class="menu">
+      <a class={writingActive ? "active" : ""} href="/writing">Writing,</a>
+      <ul>
+        <li><a href="/writing">Writing</a></li>
+        <li><a href="/writing#elsewhere">Elsewhere</a></li>
+        <li><a href="/links">Links</a></li>
+      </ul>
+    </span>
     <a class={currentPath.startsWith("now") ? "active" : ""} href="/now">Now</a>
   </nav>
 </header>

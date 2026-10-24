@@ -94,12 +94,6 @@ display: inline;
 ul.articles li:not(:last-child)::after{
 content: " · ";
 }
-.tag{
-font-size: 70%;
-font-family: monospace;
-font-weight: bold;
-vertical-align: 0.15em;
-}
 .more{
 font-size: 80%;
 font-family: monospace;
@@ -108,6 +102,11 @@ margin: 0.5rem 0 0;
 }
 .section figure{
 margin: 0;
+}
+/* The global img rule sets width: 100%; height: auto keeps the photo's own
+   proportions instead of the frame stretching it to the height attribute. */
+.section figure img{
+height: auto;
 }
 .section figcaption{
 font-size: 85%;
@@ -159,7 +158,7 @@ margin-top: 0.5rem;
     <h4>{g.heading}</h4>
     <ul class="articles">
       {g.articles.map((a) => (
-        <li><a href={a.url} title={a.note || undefined}>{a.title}</a>{a.rating && <> <span class="tag">{a.rating}</span></>}{a.dyk && <> <span class="tag">DYK</span></>}</li>
+        <li><a href={a.url} title={a.note || undefined}>{a.title}</a></li>
       ))}
     </ul>
   </>
