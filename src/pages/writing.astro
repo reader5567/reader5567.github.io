@@ -1,25 +1,16 @@
 ---
-import '../global.css';
-import Header from '../header.astro'
-const pathname = new URL(Astro.request.url).pathname;
-const currentPath = pathname.slice(1);
+import Layout from '../layout.astro';
 const posts = await Astro.glob('./writing/*.md');
 posts.sort((a, b) => Date.parse(b.frontmatter.date) - Date.parse(a.frontmatter.date));
-
 ---
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="generator" content={Astro.generator} />
-<link rel="alternate" type="application/rss+xml" title="Thadeus Smith" href={new URL("rss.xml", Astro.site)}/>
-<link rel="sitemap" href="/sitemap-index.xml" />
-<script defer data-domains="thadeussmith.com,reader5567.github.io" src="https://cloud.umami.is/script.js" data-website-id="9e360623-16d5-4cbd-9d87-24ef770232b9"></script>
-<title>Thadeus Smith — Writing</title>
+<Layout title="Thadeus Smith — Writing" description="Essays and longer writing by Thadeus Smith.">
 <style>
-li.post{
+ul.posts{
 list-style: none;
+margin: 0;
+padding: 0;
+}
+li.post{
 border-left: 6px solid;
 padding-left: 0.5rem;
 margin: 1rem 0;
@@ -36,12 +27,9 @@ font-family: monospace;
 font-weight: bold;
 }
 </style>
-</head>
-<body>
-<Header />
-<main>
+<main id="main">
+<ul class="posts">
 {posts.map((post) => <li class="post"><a href={post.url}><span class="title">{post.frontmatter.title}</span></a><br> <span class="date">{new Date(post.frontmatter.date.replace('Z', '')).toDateString()}</span></li>)}
-
+</ul>
 </main>
-</body>
-</html>
+</Layout>

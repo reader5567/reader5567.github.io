@@ -1,18 +1,10 @@
 ---
-import '../global.css';
-import Header from '../header.astro'
-const pathname = new URL(Astro.request.url).pathname;
-const currentPath = pathname.slice(1);
+import Layout from '../layout.astro';
 ---
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="generator" content={Astro.generator} />
-<link rel="alternate" type="application/rss+xml" title="Thadeus Smith" href={new URL("rss.xml", Astro.site)}/>
-<link rel="sitemap" href="/sitemap-index.xml" />
-<script defer data-domains="thadeussmith.com,reader5567.github.io" src="https://cloud.umami.is/script.js" data-website-id="9e360623-16d5-4cbd-9d87-24ef770232b9"></script>
+<Layout
+  title="Thadeus Smith"
+  description="Résumé of Thadeus Smith: Director of Education at Lumos Debate, speech and debate coach, editor at Champion Briefs, and Wikipedia administrator."
+>
 <style>
 .section{
 border-left: 6px solid;
@@ -57,46 +49,81 @@ margin-top: 0.5rem;
     padding-left: 0.25rem;
   }
 }
-
 </style>
-<title>Thadeus Smith</title>
-</head>
-<body>
-<Header />
-<main>
+<main id="main">
 <div class="section">
 <h2>Experience</h2>
 
-<p class="resume"><span class="position">Speech and Debate Teacher</span><br> 
-<span class="company">American Heritage Schools</span> <span class="date">August 2023–Present</span>
+<p class="resume"><span class="position">Director of Education</span><br>
+<span class="company">Lumos Debate</span> <span class="date">June 2026–Present</span>
 <span class="description">
-Coach of American Heritage School’s speech and debate team, which is ranked in the top 1% of teams nationwide, has been the state champion six years in a row, and is the only team to champion the National Speech and Debate Tournament at both the middle and high school levels.
+Lumos Debate is the leading provider of speech and debate education in the Boston and New York metro areas, running workshops and classes that serve hundreds of students annually.
 <br>
-• Led speech and debate classes from grades 4 to 12 using a custom-built curriculum designed to guide students towards both portable skills and lasting competitive success
+• Supervise and train dozens of instructors teaching small-group Public Forum Debate classes, providing instructional coaching and stepping in as a substitute when needed
 <br>
-• Created a competitive and supportive team culture, resulting in 19 state finalists, 33 bids to the Tournament of Champions, 28 national qualifiers, and 2 national finalists in 2024
+• Oversee enrollment, staffing, and family communications for weekly classes at multiple Massachusetts locations
 <br>
-• Coach students across all events, including Congressional Debate, Limited Preparation, and World Schools Debate
+• Lead growth efforts, including open houses and trial workshops, to expand access to speech and debate education in Greater Boston
+<br>
+• Organize monthly virtual tournaments that give hundreds of students feedback on argumentation and presentation
+</span>
+</p>
+
+<p class="resume"><span class="position">External Coach</span><br>
+<span class="company">American Heritage Schools</span> <span class="date">June 2026–Present</span>
+<span class="description">
+• Continue coaching Congressional Debate and World Schools Debate competitors remotely and at national circuit tournaments following my move to Boston
+</span>
+</p>
+
+<p class="resume"><span class="position">Speech and Debate Teacher</span><br>
+<span class="company">American Heritage Schools</span> <span class="date">June 2023–June 2026</span>
+<span class="description">
+American Heritage School (Broward) runs one of the top-ranked speech and debate programs in the country. The program won the Florida State Championship every year from 2020 to 2026 and produced 26 national qualifiers and 29 Tournament of Champions bids in the 2024–25 season.
+<br>
+• Led the Congressional Debate team, which in the 2025–26 season included the Florida State Runner-Up, the Champion Presiding Officer at the Tournament of Champions, and the 9th-place finisher in the Senate at the National Speech and Debate Tournament
+<br>
+• Coached the 2025–26 Florida State Champion and NIETOC Champion in Impromptu Speaking
+<br>
+• Taught speech and debate classes from grades 5 through 12, designing full-year curricula for Congressional Debate and Extemporaneous Speaking and half-year curricula for World Schools Debate and Big Questions Debate
+<br>
+• Managed tournament registration and logistics, including parent judge rotations and family information meetings
+</span>
+</p>
+
+<p class="resume"><span class="position">Content Editor</span><br>
+<span class="company">Champion Briefs</span> <span class="date">July 2024–Present</span>
+<span class="description">
+• Serve as lead editor for the monthly Public Forum Debate brief, reviewing research contributions from a team of coaches to ensure argumentative rigor and source integrity
+</span>
+</p>
+
+<p class="resume"><span class="position">Researcher</span><br>
+<span class="company">Champion Briefs</span> <span class="date">July 2023–July 2024</span>
+<span class="description">
+• Conducted topic research and organized evidence on upcoming debate topics, ranging from domestic political issues such as executive orders to international subjects like the European Union
 </span>
 </p>
 
 <p class="resume"><span class="position">DEI and Community Planning Coordinator</span><br>
-<span class="company">Kitsap County Commissioner's Office</span> <span class="date">August 2022–July 2023</span>
+<span class="company">Kitsap County Commissioner's Office</span> <span class="date">June 2022–July 2023</span>
 <span class="description">
-One of 35 people selected to participate in the Lead for America National Hometown Fellowship, which places young professionals in public service roles in their hometown communities.
+One of 35 people selected for the Lead for America National Hometown Fellowship, an AmeriCorps program that places young professionals in public service roles in their hometown communities.
 <br>
 • Conducted a year-long listening tour, interviewing over 150 county stakeholders to understand their needs and creating a report for the County Commissioners
 <br>
-• Spearheaded research into equity issues around the county, including a survey of 1,100 staff members, that culminated in the creation of the Kitsap County DEI Manager position
+• Spearheaded research into equity issues around the county, including a survey of 1,100 staff members, that culminated in the creation of the county's first full-time DEI Manager position
+<br>
+• Facilitated community forums and advised commissioners on organizational planning and diverse hiring pipelines
 </span>
 </p>
 
 <p class="resume"><span class="position">Content Manager</span><br>
-<span class="company">TalkMaze</span> <span class="date">April 2020-June 2022</span>
+<span class="company">TalkMaze</span> <span class="date">April 2020–June 2022</span>
 <span class="description">
-Founding team member of TalkMaze, an education startup providing online  speech and debate education and competition opportunities to schools without the resources for classroom-based teams.
+Founding team member of TalkMaze, an education startup providing online speech and debate education and competition opportunities to schools without the resources for classroom-based teams.
 <br>
-• Led team of two dozen coaches from around the world to develop a standardized, culturally responsive curriculum taught to thousands of students across three continents
+• Led a team of two dozen coaches from around the world to develop a standardized, culturally responsive curriculum taught to thousands of students across three continents
 <br>
 • Developed a series of on-demand video courses covering multiple speech and debate events, increasing accessibility and student retention
 </span>
@@ -107,7 +134,7 @@ Founding team member of TalkMaze, an education startup providing online  speech 
 <span class="description">
 One of two interns at Civic Ventures, which advocates for progressive policy changes in the Pacific Northwest.
 <br>
-• Presented information on the "Restore our Time" campaign to dozens of local political party meetings in the Seattle metro area
+• Presented information on the "Restore Our Time" campaign to dozens of local political party meetings in the Seattle metro area
 <br>
 • Delivered thousands of constituent notecards to Washington legislators, resulting in Washington adopting the strongest overtime protections in the nation
 </span>
@@ -119,24 +146,32 @@ One of two interns at Civic Ventures, which advocates for progressive policy cha
 
 <p class="resume"><span class="position">MA, Theory and Practice of Human Rights</span><br>
  <span class="company">University of Essex</span> <span class="date">September 2021–June 2022</span>
-<span class="description">My research focued on transgender youth and whether current efforts to legislate their existence constitute human rights violations. I graduated with the Kevin Boyle Memorial Prize for being the top student in my program.</span>
+<span class="description">My research focused on transgender youth and whether current efforts to legislate their existence constitute human rights violations. I graduated with the Kevin Boyle Memorial Prize for being the top student in my program.</span>
 </p>
-
 
 <p class="resume"><span class="position">BA, Political Science and Gender, Sexuality, & Race Studies</span><br>
  <span class="company">Pacific Lutheran University</span> <span class="date">September 2019–May 2021</span>
-<span class="description">My capstone projects focused on progressive challengers to moderate Democrats and on identity-based arguments in Competitive speech and debate. I graduated <i>cum laude</i>.</span>
+<span class="description">My capstone projects focused on progressive challengers to moderate Democrats and on identity-based arguments in competitive speech and debate. I graduated <i>cum laude</i>.</span>
+</p>
+
+<p class="resume"><span class="position">AA, General Studies</span><br>
+ <span class="company">Olympic College</span> <span class="date">2017–2019</span>
 </p>
 </div>
 
 <div class="section">
 <h2>Volunteering</h2>
 
-<p class="resume"><span class="position">Volunteer Administrator</span><br>
+<p class="resume"><span class="position">Editor and Administrator</span><br>
  <span class="company">Wikipedia</span> <span class="date">August 2016–Present</span>
+<span class="description">Editing as <a href="https://en.wikipedia.org/wiki/User:ThadeusOfNazereth">ThadeusOfNazereth</a> since August 2016; elected an administrator of the English Wikipedia in November 2024. Voting member of the Wikimedia Foundation elections committee.</span>
+</p>
+
+<p class="resume"><span class="position">Photographer</span><br>
+ <span class="company">WikiPortraits</span> <span class="date">2026–Present</span>
+<span class="description">Photographing authors and other public figures at festivals and conventions so that their Wikipedia articles have a freely licensed portrait.</span>
 </p>
 </div>
 
 </main>
-</body>
-</html>
+</Layout>

@@ -1,0 +1,20 @@
+---
+// Site footer. `rows` lets a page add its own lines (posts add Title/Author/Published).
+// The design credit appears on every page; the RSS and Updated lines can be
+// switched off with showSite={false} where they would be redundant.
+const { rows = [], showSite = true } = Astro.props;
+const built = new Date();
+---
+<footer>
+<div class="info">
+{rows.map((r) => (
+  <p><span class="infotype">{r.label}:</span> {r.href ? <a href={r.href}>{r.text}</a> : r.text}</p>
+))}
+<p><span class="infotype">Design:</span> <a href="https://cheap.urls.loan/">E. Beaton</a></p>
+{showSite && <p><span class="infotype">RSS:</span> <a href="/feed.xml">feed.xml</a></p>}
+{showSite && <p><span class="infotype">Updated:</span> {built.toDateString()}</p>}
+</div>
+<div class="siteinfo">
+<p>© {built.getFullYear()}</p>
+</div>
+</footer>
