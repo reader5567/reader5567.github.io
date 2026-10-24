@@ -1,11 +1,26 @@
 # Notes
 
-See `PLAN.md` for what has been decided about the site and what is still to come.
+## Ground rules
+
+Agreed October 2026, when the site was refreshed in three pull requests.
+
+- **The appearance does not change.** Mona Sans, the dotted background,
+  the black frame, uppercase headings, bordered sections. New content uses
+  the existing styles; no new colors, fonts or layout primitives.
+- **Quiet web.** No ads, no trackers, no analytics, no third-party fonts,
+  and no JavaScript in the visitor's browser. Anything that needs outside
+  data is fetched at build time and baked into plain HTML.
+- **Credit.** The design is by E. Beaton (https://cheap.urls.loan/). The
+  credit lives in the shared footer on every page.
+
+Deliberately not done: 88×31 buttons (maybe later), a guestbook (needs a
+backend), dark mode (an appearance change), Tiny Awards (the site predates
+their window). The RSS feed stays essays-only.
 
 ## Structure
 
 - `src/layout.astro` is the shared page shell (head, header, footer). Every page uses it.
-- `src/header.astro` is the name and the nav. `src/footer.astro` is the footer, including the design credit.
+- `src/header.astro` is the name and the nav. Hovering or focusing "Writing" opens a CSS-only menu (Writing, Elsewhere, Links); the styles are in `global.css` under `nav .menu`. `src/footer.astro` is the footer, including the design credit.
 - `src/global.css` holds all site-wide styles, including the print stylesheet.
 - `src/pages/` holds one file per page: `index.astro` (résumé), `writing.astro`, `now.astro`, `links.astro`, plus `feed.xml.js` for RSS and `photo-of-the-day.jpg.ts` for the Commons photo.
 - `src/lib/` holds the build-time fetchers (`letterboxd.ts`, `commons.ts`, `wikipedia.ts`) and the shared `fetch.ts` helper. Nothing in here runs in the visitor's browser.
