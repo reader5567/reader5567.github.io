@@ -120,8 +120,9 @@ margin-top: 0.5rem;
 }
 </style>
 <main id="main">
-<p class="jump"><a href="#posts">Posts</a> · <a href="#letterboxd">Letterboxd</a> · <a href="#photo">Photo</a> · <a href="#wikipedia">Wikipedia</a></p>
-<ul class="posts" id="posts">
+<p class="jump"><a href="#posts">Essays</a> · <a href="#letterboxd">Letterboxd</a> · <a href="#photo">Photo</a> · <a href="#wikipedia">Wikipedia</a></p>
+<h2 id="posts">Essays</h2>
+<ul class="posts">
 {posts.map((post) => <li class="post"><a href={post.url}><span class="title">{post.frontmatter.title}</span></a><br> <span class="date">{new Date(post.frontmatter.date.replace('Z', '')).toDateString()}</span></li>)}
 </ul>
 
