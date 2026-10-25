@@ -24,3 +24,7 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# Obsidian (the vault settings stay on your computer)
+.obsidian/
+.trash/

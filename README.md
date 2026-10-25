@@ -22,24 +22,45 @@ their window). The RSS feed stays essays-only.
 - `src/layout.astro` is the shared page shell (head, header, footer). Every page uses it.
 - `src/header.astro` is the name and the nav. Hovering or focusing "Writing" opens a CSS-only menu (Writing, Elsewhere, Links); the styles are in `global.css` under `nav .menu`. `src/footer.astro` is the footer, including the design credit.
 - `src/global.css` holds all site-wide styles, including the print stylesheet.
-- `src/pages/` holds one file per page: `index.astro` (résumé), `writing.astro`, `now.astro`, `links.astro`, plus `feed.xml.js` for RSS and `photo-of-the-day.jpg.ts` for the Commons photo.
+- `src/pages/` holds one file per page: `index.astro` (résumé), `writing.astro`, `now.astro`, `links.astro`, plus `feed.xml.js` for RSS and `photo-of-the-day.jpg.ts` for the Commons photo. These are the templates: layout and styles.
+- `src/content/` holds the words for the Résumé, Now and Links pages as Markdown (see below). `src/content.config.ts` describes those files, and `src/lib/markdown.ts` turns them into the markup the templates have always used, so the design does not change.
+- `src/pages/writing/` holds the essays, one Markdown file each.
 - `src/lib/` holds the build-time fetchers (`letterboxd.ts`, `commons.ts`, `wikipedia.ts`) and the shared `fetch.ts` helper. Nothing in here runs in the visitor's browser.
 - `src/site.ts` holds settings you may want to edit by hand: webring URLs and how many films the Writing page shows.
 
+## Editing in Obsidian
+
+Everything you write lives in Markdown, so the whole repository can be opened as an Obsidian vault (`.obsidian/` is gitignored, so the vault settings stay on your computer). The Git plugin's "Commit-and-sync" command publishes: GitHub rebuilds the site a few minutes after each push.
+
+| Page | Edit |
+| --- | --- |
+| Résumé | `src/content/resume/` |
+| Now | `src/content/now.md` |
+| Links | `src/content/links.md` |
+| Writing | `src/pages/writing/` (drafts in `src/pages/writing/_drafts/`) |
+
+The one sentence about you on the Now page (and in the homepage h-card) is `profile.note` in `src/site.ts`, which Obsidian does not show.
+
+Markdown turns straight quotes into curly ones (it always has, in the essays), so `"` and `'` can be typed normally.
+
 ## Resume
 
-The resume HTML is comprised of a single paragraph representing a position. Each position is made up of a Title, Company, Dates, and an optional description.
-
-↓↓↓↓↓↓↓↓↓↓
+Each position is one Markdown file in `src/content/resume/`, in the folder for its section: `experience/`, `education/` or `volunteering/`. The Properties at the top hold the position, company, dates and order; the body is the description, which is optional.
 
 ```
-<p class="resume">
-<span class="position">POSTITION TITLE</span><br>
-<span class="company">COMPANY</span>
-<span class="date">DATES</span>
-<span class="description">DESCRIPTION (Optional)</span>
-</p>
+---
+position: Director of Education
+company: Lumos Debate
+dates: June 2026–Present
+order: 10
+---
+One optional paragraph introducing the organization.
+
+- A bullet point
+- Another bullet point
 ```
+
+`order` sets where the entry sits in its section, lowest first. The existing entries go up in tens, so a new one can slot in between (15 goes between 10 and 20). Paragraphs show first and bullets show as "•" lines, as they always have. Links (`[text](url)`) and italics (`*text*`) work in the description.
 
 Dates use an en dash (–), as in `June 2023–June 2026`.
 
@@ -49,9 +70,11 @@ The homepage carries an invisible [representative h-card](https://microformats.o
 
 ## Now page
 
-`src/pages/now.astro` is the "now" page (who I am, what I'm doing lately). Edit the paragraphs under "What I'm doing now" whenever things change; the Updated date in the footer is filled in automatically when the site builds. `/about` redirects here.
+The "What I'm doing now" text is `src/content/now.md`; edit it whenever things change, including the month in its heading. `src/pages/now.astro` is the template (the photo and opening paragraph). The Updated date in the footer is filled in automatically when the site builds. `/about` redirects here.
 
 ## Writing
+
+Each `.md` file in `src/pages/writing/` is published as a post, and its filename becomes the URL (`new-post.md` is `/writing/new-post`; use hyphens, not spaces). Keep unfinished posts in `src/pages/writing/_drafts/`: Astro skips folders whose names start with an underscore, so nothing there is published or listed. The repository is public, though, so drafts there can be read on GitHub.
 
 All posts begin with the following YAML Header to define metadata. `layout: ../../post-layout.astro` defines the page styling and should be included for all posts. 
 
@@ -79,7 +102,14 @@ To build offline, set `FETCH_CACHE_DIR=.fetch-cache` (gitignored): responses are
 
 ## Links page
 
-`src/pages/links.astro` is a hand-maintained page. It was seeded from the Recommended Reading lists on the Wikipedia user page in October 2026 but is not synced; edit it directly. The Wayward Webring block appears once `src/site.ts` marks the application approved.
+The list is `src/content/links.md`, hand-maintained. It was seeded from the Recommended Reading lists on the Wikipedia user page in October 2026 but is not synced. Each `###` heading is a section, and each item is two lines: the title (with " by author" if there is one), then the description on the next line, indented to line up with the title:
+
+```
+- [*Piranesi*](https://en.wikipedia.org/wiki/Piranesi_(novel)) by [Susanna Clarke](https://en.wikipedia.org/wiki/Susanna_Clarke)
+  A quick, fun read about a 'lil guy wandering a mysterious house.
+```
+
+The title shows in bold and the description in the small grey type below it. `src/pages/links.astro` is the template. The Wayward Webring block appears once `src/site.ts` marks the application approved.
 
 ## Webrings
 

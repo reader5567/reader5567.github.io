@@ -1,8 +1,26 @@
 ---
 import Layout from '../layout.astro';
+import { getCollection } from 'astro:content';
 import { site } from '../site';
+import { descriptionHtml } from '../lib/markdown';
 const { profile } = site;
 const home = new URL('/', Astro.site).href;
+
+// The résumé entries are Markdown files in src/content/resume/, one per
+// position, in a folder per section. Each file's Properties hold the
+// position, company, dates and order; its body is the description.
+const entries = await getCollection('resume');
+const sections = [
+  ['experience', 'Experience'],
+  ['education', 'Education'],
+  ['volunteering', 'Volunteering'],
+].map(([folder, title]) => ({
+  title,
+  entries: entries
+    .filter((e) => e.id.startsWith(folder + '/'))
+    .sort((a, b) => a.data.order - b.data.order)
+    .map((e) => ({ ...e.data, description: descriptionHtml(e.rendered?.html ?? '') })),
+}));
 ---
 <Layout
   title="Thadeus Smith"
@@ -65,104 +83,17 @@ margin-top: 0.5rem;
 <data class="u-url u-uid" value={home}></data>
 </div>
 
+{sections.map((section) => (
 <div class="section">
-<h2>Experience</h2>
-
-<p class="resume"><span class="position">Director of Education</span><br>
-<span class="company">Lumos Debate</span> <span class="date">June 2026–Present</span>
-<span class="description">
-Lumos Debate is the leading provider of speech and debate education in the Boston and New York metro areas, running workshops and classes that serve hundreds of students annually.
-<br>
-• Supervise and train dozens of instructors teaching small-group Public Forum Debate classes, providing instructional coaching and stepping in as a substitute when needed
-<br>
-• Oversee enrollment, staffing, and family communications for weekly classes at multiple Massachusetts locations
-<br>
-• Lead growth efforts, including open houses and trial workshops, to expand access to speech and debate education in Greater Boston
-<br>
-• Organize monthly virtual tournaments that give hundreds of students feedback on argumentation and presentation
-</span>
+<h2>{section.title}</h2>
+{section.entries.map((entry) => (
+<p class="resume"><span class="position">{entry.position}</span><br>
+<span class="company">{entry.company}</span> <span class="date">{entry.dates}</span>
+{entry.description && <span class="description" set:html={entry.description} />}
 </p>
-
-<p class="resume"><span class="position">Content Editor</span><br>
-<span class="company">Champion Briefs</span> <span class="date">July 2023–Present</span>
-<span class="description">
-• Serve as lead editor for the monthly Public Forum Debate brief, reviewing research contributions from a team of coaches to ensure argumentative rigor and source integrity
-<br>
-• Conduct topic research and organized evidence on upcoming debate topics, ranging from domestic political issues such as executive orders to international subjects like the European Union
-</span>
-</p>
-
-<p class="resume"><span class="position">Speech and Debate Teacher</span><br>
-<span class="company">American Heritage Schools</span> <span class="date">June 2023–June 2026</span>
-<span class="description">
-American Heritage School (Broward) runs one of the top-ranked speech and debate programs in the country. The program won the Florida State Championship every year from 2020 to 2026 and produced 26 national qualifiers and 29 Tournament of Champions bids in the 2024–25 season.
-<br>
-• Led the Congressional Debate team, which in the 2025–26 season included the Florida State Runner-Up, the Champion Presiding Officer at the Tournament of Champions, and the 9th-place finisher in the Senate at the National Speech and Debate Tournament
-<br>
-• Coached the 2025–26 Florida State Champion and NIETOC Champion in Impromptu Speaking
-<br>
-• Taught speech and debate classes from grades 5 through 12, designing full-year curricula for Congressional Debate and Extemporaneous Speaking and half-year curricula for World Schools Debate and Big Questions Debate
-<br>
-• Managed tournament registration and logistics, including parent judge rotations and family information meetings
-</span>
-</p>
-
-<p class="resume"><span class="position">DEI and Community Planning Coordinator</span><br>
-<span class="company">Kitsap County Commissioner's Office</span> <span class="date">June 2022–July 2023</span>
-<span class="description">
-One of 35 people selected for the Lead for America National Hometown Fellowship, an AmeriCorps program that places young professionals in public service roles in their hometown communities.
-<br>
-• Conducted a year-long listening tour, interviewing over 150 county stakeholders to understand their needs and creating a report for the County Commissioners
-<br>
-• Spearheaded research into equity issues around the county, including a survey of 1,100 staff members, that culminated in the creation of the county's first full-time DEI Manager position
-<br>
-• Facilitated community forums and advised commissioners on organizational planning and diverse hiring pipelines
-</span>
-</p>
-
-<p class="resume"><span class="position">Content Manager</span><br>
-<span class="company">TalkMaze</span> <span class="date">April 2020–June 2022</span>
-<span class="description">
-Founding team member of TalkMaze, an education startup providing online speech and debate education and competition opportunities to schools without the resources for classroom-based teams.
-<br>
-• Led a team of two dozen coaches from around the world to develop a standardized, culturally responsive curriculum taught to thousands of students across three continents
-<br>
-• Developed a series of on-demand video courses covering multiple speech and debate events, increasing accessibility and student retention
-</span>
-</p>
+))}
 </div>
-
-<div class="section">
-<h2>Education</h2>
-
-<p class="resume"><span class="position">MA, Theory and Practice of Human Rights</span><br>
- <span class="company">University of Essex</span> <span class="date">September 2021–June 2022</span>
-<span class="description">My research focused on transgender youth and whether current efforts to legislate their existence constitute human rights violations. I graduated with the Kevin Boyle Memorial Prize for being the top student in my program.</span>
-</p>
-
-<p class="resume"><span class="position">BA, Political Science and Gender, Sexuality, & Race Studies</span><br>
- <span class="company">Pacific Lutheran University</span> <span class="date">September 2019–May 2021</span>
-<span class="description">My capstone projects focused on progressive challengers to moderate Democrats and on identity-based arguments in competitive speech and debate. I graduated <i>cum laude</i>.</span>
-</p>
-
-<p class="resume"><span class="position">AA, General Studies</span><br>
- <span class="company">Olympic College</span> <span class="date">2017–2019</span>
-</p>
-</div>
-
-<div class="section">
-<h2>Volunteering</h2>
-
-<p class="resume"><span class="position">Editor and Administrator</span><br>
- <span class="company">Wikipedia</span> <span class="date">August 2016–Present</span>
-<span class="description">Editing as <a href="https://en.wikipedia.org/wiki/User:ThadeusOfNazereth">ThadeusOfNazereth</a> since August 2016; elected an administrator of the English Wikipedia in November 2024. Voting member of the Wikimedia Foundation elections committee.</span>
-</p>
-
-<p class="resume"><span class="position">Photographer</span><br>
- <span class="company">WikiPortraits</span> <span class="date">2026–Present</span>
-<span class="description">Photographing authors and other public figures at festivals and conventions so that their Wikipedia articles have a freely licensed portrait.</span>
-</p>
-</div>
+))}
 
 </main>
 </Layout>
