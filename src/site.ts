@@ -22,6 +22,16 @@ export const site = {
     home: 'https://waywardweb.org/',
   },
 
+  // Profiles listed in the footer's "Elsewhere" row, in this order. Each link
+  // carries rel="me", which tells IndieWeb tools the profile is yours.
+  elsewhere: [
+    { label: 'Letterboxd', url: 'https://letterboxd.com/ThadeusOfNaz/' },
+    { label: 'LinkedIn', url: 'https://www.linkedin.com/in/thadeushsmith/' },
+    { label: 'Instagram', url: 'https://www.instagram.com/thadeusofnazereth/' },
+    { label: 'X', url: 'https://x.com/ThadeusOfNaz/' },
+    { label: 'Wikipedia', url: 'https://en.wikipedia.org/wiki/User:ThadeusOfNazereth' },
+  ],
+
   // How many recent Letterboxd entries the Writing page shows.
   recentFilms: 8,
 
