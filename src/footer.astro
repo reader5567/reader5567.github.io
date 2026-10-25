@@ -24,8 +24,8 @@ const showRing = Boolean(ring.previous && ring.next);
   <p><span class="infotype">{r.label}:</span> {r.href ? <a href={r.href}>{r.text}</a> : r.text}</p>
 ))}
 <p><span class="infotype">Design:</span> <a href="https://cheap.urls.loan/">E. Beaton</a></p>
-{showSite && <p><span class="infotype">RSS:</span> <a href="/feed.xml">feed.xml</a></p>}
 {showSite && <p><span class="infotype">Currently:</span> <span>Watched <a href={film.link}>{film.title}</a>. Edited <a href={edit.url}>{edit.title}</a>. Uploaded <a href={upload.pageUrl}>{upload.title.replace(/\.[a-z0-9]+$/i, '')}</a>.</span></p>}
+{showSite && <p><span class="infotype">Elsewhere:</span> <span>{site.elsewhere.map((e, i) => <>{i > 0 && ' · '}<a href={e.url} rel="me">{e.label}</a></>)}</span></p>}
 {showRing && <p><span class="infotype">Webring:</span> <span><a href={ring.previous}>← previous</a> · <a href="https://xn--sr8hvo.ws/">🕸💍</a> · <a href={ring.next}>next →</a></span></p>}
 {showSite && <p><span class="infotype">Updated:</span> {built.toDateString()}</p>}
 </div>

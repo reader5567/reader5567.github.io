@@ -97,38 +97,6 @@ nav a:hover{
 text-decoration: underline;
 }
 
-/* Writing menu: opens on hover (mouse) or focus (keyboard), no JavaScript.
-   The list sits just below the word so the pointer can travel into it. */
-nav .menu{
-position: relative;
-display: inline-block;
-}
-nav .menu ul{
-display: none;
-position: absolute;
-top: 100%;
-left: 0;
-z-index: 2;
-margin: 0;
-padding: 0.15em 0;
-list-style: none;
-background: white;
-border: 3px solid black;
-min-width: max-content;
-font-size: 0.8em;
-}
-nav .menu:hover ul,
-nav .menu:focus-within ul{
-display: block;
-}
-nav .menu li a{
-display: block;
-padding: 0.1em 0.7em;
-}
-nav .menu li a:hover,
-nav .menu li a:focus{
-text-decoration: underline;
-}
 figure{
 margin:0;
 }

@@ -120,15 +120,15 @@ margin-top: 0.5rem;
 }
 </style>
 <main id="main">
-<p class="jump"><a href="#elsewhere">Skip to Elsewhere ↓</a></p>
-<ul class="posts">
+<p class="jump"><a href="#posts">Posts</a> · <a href="#letterboxd">Letterboxd</a> · <a href="#photo">Photo</a> · <a href="#wikipedia">Wikipedia</a></p>
+<ul class="posts" id="posts">
 {posts.map((post) => <li class="post"><a href={post.url}><span class="title">{post.frontmatter.title}</span></a><br> <span class="date">{new Date(post.frontmatter.date.replace('Z', '')).toDateString()}</span></li>)}
 </ul>
 
 <h2 id="elsewhere">Elsewhere</h2>
 
 <div class="section">
-<h3>Letterboxd</h3>
+<h3 id="letterboxd">Letterboxd</h3>
 <ul class="films">
 {recent.map((f) => (
   <li>
@@ -142,7 +142,7 @@ margin-top: 0.5rem;
 </div>
 
 <div class="section">
-<h3>Photo of the day</h3>
+<h3 id="photo">Photo of the day</h3>
 <figure>
 <img src="/photo-of-the-day.jpg" width={photo.imageWidth} height={photo.imageHeight} alt={photo.caption} loading="lazy">
 <figcaption>{photo.caption}{photo.taken && ` (${shortDate(photo.taken)})`}. <a href={photo.pageUrl}>On Wikimedia Commons</a>{photo.license && `, ${photo.license}`}.</figcaption>
@@ -151,7 +151,7 @@ margin-top: 0.5rem;
 </div>
 
 <div class="section">
-<h3>Wikipedia</h3>
+<h3 id="wikipedia">Wikipedia</h3>
 <p>Articles I have written or substantially expanded, kept up to date from <a href={USER_PAGE_URL}>my user page</a>.</p>
 {groups.map((g) => (
   <>

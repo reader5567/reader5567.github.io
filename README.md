@@ -15,18 +15,18 @@ Agreed October 2026, when the site was refreshed in three pull requests.
 
 Deliberately not done: 88×31 buttons (maybe later), a guestbook (needs a
 backend), dark mode (an appearance change), Tiny Awards (the site predates
-their window). The RSS feed stays essays-only.
+their window).
 
 ## Structure
 
 - `src/layout.astro` is the shared page shell (head, header, footer). Every page uses it.
-- `src/header.astro` is the name and the nav. Hovering or focusing "Writing" opens a CSS-only menu (Writing, Elsewhere, Links); the styles are in `global.css` under `nav .menu`. `src/footer.astro` is the footer, including the design credit.
+- `src/header.astro` is the name and the nav: CV, Words, Links, Now. `src/footer.astro` is the footer, including the design credit and the "Elsewhere" row of profile links (edit those in `src/site.ts`).
 - `src/global.css` holds all site-wide styles, including the print stylesheet.
-- `src/pages/` holds one file per page: `index.astro` (résumé), `writing.astro`, `now.astro`, `links.astro`, plus `feed.xml.js` for RSS and `photo-of-the-day.jpg.ts` for the Commons photo. These are the templates: layout and styles.
+- `src/pages/` holds one file per page: `index.astro` (résumé), `writing.astro`, `now.astro`, `links.astro`, plus `photo-of-the-day.jpg.ts` for the Commons photo. These are the templates: layout and styles.
 - `src/content/` holds the words for the Résumé, Now and Links pages as Markdown (see below). `src/content.config.ts` describes those files, and `src/lib/markdown.ts` turns them into the markup the templates have always used, so the design does not change.
 - `src/pages/writing/` holds the essays, one Markdown file each.
 - `src/lib/` holds the build-time fetchers (`letterboxd.ts`, `commons.ts`, `wikipedia.ts`) and the shared `fetch.ts` helper. Nothing in here runs in the visitor's browser.
-- `src/site.ts` holds settings you may want to edit by hand: webring URLs and how many films the Writing page shows.
+- `src/site.ts` holds settings you may want to edit by hand: the footer's profile links, webring URLs, how many films the Writing page shows, and your profile (name, note, photo).
 
 ## Editing in Obsidian
 
@@ -88,7 +88,7 @@ layout: ../../post-layout.astro
 
 ### Elsewhere
 
-Below the posts, the Writing page shows three sections filled in when the site builds:
+Below the posts, the Writing page ("Words" in the nav) shows three sections filled in when the site builds. A line of links at the top of the page jumps to each: Posts · Letterboxd · Photo · Wikipedia.
 
 - **Letterboxd**: the latest diary entries from `https://letterboxd.com/thadeusofnaz/rss/`. Title, year, stars, date, and the start of the review. No posters.
 - **Photo of the day**: one of your original (uncropped) Commons uploads, chosen by the calendar date, served from this site at `/photo-of-the-day.jpg`. Files with "crop" in the name are skipped.
@@ -114,10 +114,6 @@ The title shows in bold and the description in the small grey type below it. `sr
 ## Webrings
 
 `src/site.ts` holds the IndieWeb webring URLs (shown in the footer on every page, which satisfies the ring's homepage check) and the Wayward Webring URLs (shown on `/links`). Both are plain links; no scripts.
-
-### RSS Feed
-
-You can change the information in the RSS feed by editing the javascript in `/src/pages/feed.xml.js`. The feed is served at `/feed.xml`.
 
 ## Credits
 
