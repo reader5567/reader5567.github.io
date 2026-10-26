@@ -6,7 +6,7 @@
 //   so the visitor's browser never contacts Wikimedia.
 // - The most recent upload, for the footer's "Currently" line.
 
-import { fetchJson, fetchOnce, once } from './fetch';
+import { decodeEntities, fetchJson, fetchOnce, once } from './fetch';
 
 export const COMMONS_USER = 'ThadeusOfNazereth';
 const API = 'https://commons.wikimedia.org/w/api.php';
@@ -114,16 +114,7 @@ interface ImageInfoResponse {
 }
 
 function stripHtml(html: string): string {
-  return html
-    .replace(/<[^>]+>/g, '')
-    .replace(/&nbsp;/g, ' ')
-    .replace(/&amp;/g, '&')
-    .replace(/&lt;/g, '<')
-    .replace(/&gt;/g, '>')
-    .replace(/&quot;/g, '"')
-    .replace(/&#39;/g, "'")
-    .replace(/\s+/g, ' ')
-    .trim();
+  return decodeEntities(html.replace(/<[^>]+>/g, '')).replace(/\s+/g, ' ').trim();
 }
 
 function nameToCaption(name: string): string {

@@ -3,7 +3,7 @@
 // the feed embeds one per entry and we deliberately drop it.
 
 import { XMLParser } from 'fast-xml-parser';
-import { fetchText, once } from './fetch';
+import { decodeEntities, fetchText, once } from './fetch';
 
 export const LETTERBOXD_USER = 'thadeusofnaz';
 const FEED = `https://letterboxd.com/${LETTERBOXD_USER}/rss/`;
@@ -30,18 +30,11 @@ function toStars(rating: number): string {
 
 /** Strip tags and collapse whitespace; the feed's description is HTML. */
 function plainText(html: string): string {
-  return html
+  const text = html
     .replace(/<img[^>]*>/gi, '')
     .replace(/<\/p>\s*<p>/gi, ' ')
-    .replace(/<[^>]+>/g, '')
-    .replace(/&nbsp;/g, ' ')
-    .replace(/&amp;/g, '&')
-    .replace(/&lt;/g, '<')
-    .replace(/&gt;/g, '>')
-    .replace(/&quot;/g, '"')
-    .replace(/&#39;|&apos;/g, "'")
-    .replace(/\s+/g, ' ')
-    .trim();
+    .replace(/<[^>]+>/g, '');
+  return decodeEntities(text).replace(/\s+/g, ' ').trim();
 }
 
 /** Cut at a sentence end near `max` characters, else at a word with an ellipsis. */
@@ -68,7 +61,8 @@ export function parseFeed(xml: string): Film[] {
     // boilerplate only, and reviews written from a list end with "On list: ...".
     const review = /^Watched on /.test(text) ? '' : text.replace(/\s*On list:.*$/, '').trim();
     films.push({
-      title: String(it['letterboxd:filmTitle']),
+      // The XML parser decodes &amp; but leaves numeric codes like &#039; as text.
+      title: decodeEntities(String(it['letterboxd:filmTitle'])),
       year: String(it['letterboxd:filmYear'] ?? ''),
       stars: rating != null ? toStars(rating) : '',
       rating,
