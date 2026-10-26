@@ -76,6 +76,25 @@ export function once<T>(key: string, compute: () => Promise<T>): Promise<T> {
   return p;
 }
 
+// Named character references that turn up in feeds and API text.
+const NAMED_ENTITIES: Record<string, string> = { amp: '&', lt: '<', gt: '>', quot: '"', apos: "'", nbsp: ' ' };
+
+/**
+ * Turn HTML character references back into characters: &amp; &#039; &#39;
+ * &#x27; and the like. One pass, so "&amp;#039;" correctly becomes the
+ * literal text "&#039;" rather than being decoded twice. Unknown names are
+ * left alone.
+ */
+export function decodeEntities(text: string): string {
+  return text.replace(/&(#x[0-9a-f]+|#\d+|[a-z]+);/gi, (match, ref: string) => {
+    if (ref[0] === '#') {
+      const code = ref[1] === 'x' || ref[1] === 'X' ? parseInt(ref.slice(2), 16) : parseInt(ref.slice(1), 10);
+      return Number.isFinite(code) && code > 0 && code <= 0x10ffff ? String.fromCodePoint(code) : match;
+    }
+    return NAMED_ENTITIES[ref.toLowerCase()] ?? match;
+  });
+}
+
 /** Format an ISO date (or date-time) as e.g. "Oct 23, 2026". */
 export function shortDate(iso: string): string {
   const d = new Date(iso.length === 10 ? iso + 'T12:00:00Z' : iso);
