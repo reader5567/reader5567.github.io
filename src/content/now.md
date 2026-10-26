@@ -16,7 +16,7 @@
 
 **Playing**. [UNBEATABLE](https://store.steampowered.com/app/2240620/UNBEATABLE/), [The Loopler](https://store.steampowered.com/app/4150860/The_Loopler/), [Confidential Killings](https://store.steampowered.com/app/2797960/Confidential_Killings_A_Detective_Game/), and [Stardew Valley](https://store.steampowered.com/app/413150/Stardew_Valley/).
 
-**Reading.** I'm currently reading Michael Clune's [*Pan*](https://www.goodreads.com/book/show/220687903-pan). Just finished Nicholas Binge's [*Ascension*](https://www.goodreads.com/book/show/61813107-ascension).
+**Reading.** I'm currently reading Jesse Ball's [*The Repeat Room*](https://www.goodreads.com/book/show/205673381-the-repeat-room). Just finished Nicholas Binge's [*Ascension*](https://www.goodreads.com/book/show/61813107-ascension).
 
 **Watching.** I just started watching *Slow Horses* and *Abbott Elementary* (both are great!), and I'm always drowning in my [Letterboxd watchlist backlog](https://letterboxd.com/ThadeusOfNaz/watchlist/).
 
