@@ -18,6 +18,6 @@
 
 **Reading.** I'm currently reading Jesse Ball's [*The Repeat Room*](https://www.goodreads.com/book/show/205673381-the-repeat-room). Just finished Nicholas Binge's [*Ascension*](https://www.goodreads.com/book/show/61813107-ascension).
 
-**Watching.** I just started watching *Slow Horses* and *Abbott Elementary* (both are great!), and I'm always drowning in my [Letterboxd watchlist backlog](https://letterboxd.com/ThadeusOfNaz/watchlist/).
+**Watching.** I just finished catching up on [*Slow Horses*](https://en.wikipedia.org/wiki/Slow_Horses) and started [*Minimum Wage*](https://en.wikipedia.org/wiki/Minimum_Wage_(TV_series)) (both are great!), and I'm always drowning in my [Letterboxd watchlist backlog](https://letterboxd.com/ThadeusOfNaz/watchlist/).
 
 This is a [now page](https://nownownow.com/about). If you have your own website, you should make one too.

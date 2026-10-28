@@ -2,8 +2,6 @@
 
 ## Ground rules
 
-Agreed October 2026, when the site was refreshed in three pull requests.
-
 - **The appearance does not change.** Mona Sans, the dotted background,
   the black frame, uppercase headings, bordered sections. New content uses
   the existing styles; no new colors, fonts or layout primitives.
