@@ -1,4 +1,23 @@
+THIS IS CURRENTLY BEING MASSIVELY REBUILT AND REVAMPED!!!!! THINGS ARE MESSY!!!!!!
 Things I recommend.
+## Gaming
+## Listening
+## Photography
+
+## Reading
+### Blogs
+### Books
+#### Fiction
+#### Non-fiction
+### Comics
+### Internet fiction
+### Periodicals
+
+## Watching
+### Movies
+### Television
+### Web series
+## Wikipedia-ing
 
 ### Fiction
 
