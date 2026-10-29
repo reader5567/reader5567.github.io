@@ -4,6 +4,7 @@ export const site = {
   // Profiles listed in the footer's "Elsewhere" row, in this order. Each link
   // carries rel="me", which tells IndieWeb tools the profile is yours.
   elsewhere: [
+    { label: 'Email', url: 'mailto:nrhw9q4y@anonaddy.me' },
     { label: 'Letterboxd', url: 'https://letterboxd.com/ThadeusOfNaz/' },
     { label: 'LinkedIn', url: 'https://www.linkedin.com/in/thadeushsmith/' },
     { label: 'Instagram', url: 'https://www.instagram.com/thadeusofnazereth/' },
