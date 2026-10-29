@@ -1,0 +1,51 @@
+---
+import Layout from '../layout.astro';
+import { activeWebrings } from '../lib/webrings';
+// Every webring this site belongs to. Each ring is one Markdown file in
+// src/content/webrings/ (see README.md); this template only lays them out.
+// The footer links here with "more".
+// The description is a single Markdown paragraph; drop the <p> so it can sit
+// in the small grey line under the name, like a Links entry.
+const rings = (await activeWebrings()).map((r) => ({
+  ...r.data,
+  about: (r.rendered?.html ?? '').replace(/<\/?p>/g, '').trim(),
+}));
+---
+<Layout title="Thadeus Smith – Webrings" description="Webrings Thadeus Smith's site belongs to.">
+<style>
+/* Same bordered block as the Links page entries. */
+.webring{
+border-left: 6px solid;
+padding-left: 0.5rem;
+margin: 1rem 0 2rem;
+}
+.webring p{
+margin: 0.5rem 0;
+}
+.name{
+font-weight: 650;
+}
+.about{
+font-size: 85%;
+opacity: 70%;
+display: block;
+margin-top: 0.25rem;
+}
+@media screen and (max-width: 800px) {
+  .webring{
+    border-left: 4px solid;
+    padding-left: 0.25rem;
+  }
+}
+</style>
+<main id="main">
+<h2>Webrings</h2>
+<p>This site is part of these webrings. Follow a ring to wander through other personal sites.</p>
+{rings.map((r) => (
+  <div class="webring">
+    <p><a class="name" href={r.home}>{r.name}</a>{r.about && <span class="about" set:html={r.about} />}</p>
+    <p><a href={r.previous}>← previous site</a> · <a href={r.next}>next site →</a></p>
+  </div>
+))}
+</main>
+</Layout>
