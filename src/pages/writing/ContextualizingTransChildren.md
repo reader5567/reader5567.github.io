@@ -266,7 +266,7 @@ These pieces of legislation also, whether passed or not, contribute to an emergi
 [^6]: B Aultman, “Cisgender,” _TSQ_ 1, no. 1–2 (2015): 61–62, https://doi.org/10.1215/23289252-2399470
 [^7]: K. J. Rawson and Cristan Williams, “Transgender*: The Rhetorical Landscape of a Term,” _Present Tense: A Journal of Rhetoric in Society_ 3, no. 2 (April 23, 2014), http://www.presenttensejournal.org/volume-3/transgender-the-rhetorical-landscape-of-a-term/.
 [^8]: Susan Stryker, _Transgender History: The Roots of Today’s Revolution_, 2nd ed. (Berkeley: Seal Press, 2017), 45.
-[^9]: “Movement Advancement Project | Local Nondiscrimination Ordinances,” accessed July 7, 2022, https://www.lgbtmap.org/equality-maps/non_discrimination_ordinances.
+[^9]: “Movement Advancement Project | Local Nondiscrimination Ordinances,” accessed July 7, 2022, https://web.archive.org/web/20260207030512/https://www.lgbtmap.org/equality-maps/non_discrimination_ordinances.
 [^10]: “Chapter 22 H.F. 585,” Minnesota Statutes § (1993), 22.
 [^11]: “Movement Advancement Project | Local Nondiscrimination Ordinances.”
 [^12]: Thomas R. Dunn, “Remembering Matthew Shepard: Violence, Identity, and Queer Counterpublic Memories,” _Rhetoric & Public Affairs_ 13, no. 4 (2010): 637, https://doi.org/10.1353/rap.2010.0212.
@@ -329,7 +329,7 @@ These pieces of legislation also, whether passed or not, contribute to an emergi
 [^69]: “Convention on the Rights of the Child” (United Nations General Assembly, November 20, 1989), 1, https://www.ohchr.org/sites/default/files/crc.pdf.
 [^70]: Luisa Blanchfield, “The United Nations Convention on the Rights of the Child” (Washington, D.C.: Congressional Research Service, July 27, 2015), 1.
 [^71]: “Convention on the Rights of the Child,” 2–3.
-[^72]: “Historic Decision at the United Nations: Human Rights Council Passes First-Ever Resolution on Sexual Orientation and Gender Identity,” United Nations, June 17, 2011, https://tgeu.org/historic-un-human-rights-resolution-covers-transgender-people/.
+[^72]: “Historic Decision at the United Nations: Human Rights Council Passes First-Ever Resolution on Sexual Orientation and Gender Identity,” United Nations, June 17, 2011, https://web.archive.org/web/20240128063050/https://tgeu.org/historic-un-human-rights-resolution-covers-transgender-people/.
 [^73]: “Our Work,” _TGEU_ (blog), accessed July 17, 2022, https://tgeu.org/our-work/.
 [^74]: “About Us,” _Global Action for Trans Equality_ (blog), accessed July 17, 2022, https://gate.ngo/about-us/.
 [^75]: Jami K. Taylor and Donald P. Haider-Markel, eds., _Transgender Rights and Politics: Groups, Issue Framing, & Policy Adoption_ (Ann Arbor: University of Michigan Press, 2014), 8.
@@ -383,7 +383,7 @@ These pieces of legislation also, whether passed or not, contribute to an emergi
 [^123]: Chappell, “Texas Supreme Court OKs State Child Abuse Inquiries into the Families of Trans Kids.”
 [^124]: Aryn Fields, “Judge Halts Alabama Law Criminalizing Parents for Obtaining Essential Medical Care for Their Transgender Children,” Human Rights Campaign, May 14, 2022, https://www.hrc.org/press-releases/judge-halts-alabama-law-criminalizing-parents-for-obtaining-essential-medical-care-for-their-transgender-children.
 [^125]: Fields.
-[^126]: United Nations, “Universal Declaration of Human Rights” (Paris: United Nations General Assembly, December 10, 1948), https://www.un.org/en/development/desa/population/migration/generalassembly/docs/globalcompact/A_RES_217(III).pdf.
+[^126]: United Nations, “Universal Declaration of Human Rights” (Paris: United Nations General Assembly, December 10, 1948), https://web.archive.org/web/20220407104746/https://www.un.org/en/development/desa/population/migration/generalassembly/docs/globalcompact/A_RES_217(III).pdf.
 [^127]: Universal Declaration on Human Rights
 [^128]: United Nations, “History of the Declaration,” United Nations (United Nations), accessed July 17, 2022, https://www.un.org/en/about-us/udhr/history-of-the-declaration.
 [^129]: Christopher McCrudden, “Human Dignity and Judicial Interpretation of Human Rights,” _European Journal of International Law_ 19, no. 4 (September 1, 2008): 656, https://doi.org/10.1093/ejil/chn043.
@@ -410,7 +410,7 @@ These pieces of legislation also, whether passed or not, contribute to an emergi
 [^150]: See, for example, Rand Paul’s comments comparing gender-affirming care to ritual genital mutilation (RGM): Dan Avery and Jo Yurcaba, “Rand Paul Criticized for Trans ‘Gender Mutilation’ Remarks in Rachel Levine Hearing,” NBC News, February 26, 2021, https://www.nbcnews.com/feature/nbc-out/rand-paul-criticized-trans-gender-mutilation-remarks-rachel-levine-hearing-n1259004.
 [^151]: Dustin Jones and Jonathan Franklin, “Not Just Florida. More than a Dozen States Propose so-Called ‘Don’t Say Gay’ Bills,” NPR, April 10, 2022, sec. Politics, https://www.npr.org/2022/04/10/1091543359/15-states-dont-say-gay-anti-transgender-bills.
 [^152]: SB 1834 (Florida, 2022), https://www.myfloridahouse.gov/Sections/Documents/loaddoc.aspx?FileName=_s1834__.DOCX&DocumentType=Bill&BillNumber=1834&Session=2022.
-[^153]: HF 4827 (Minnesota, 2022), https://www.revisor.mn.gov/bills/text.php?number=HF4827&type=bill&version=0&session=ls92&session_year=2022&session_number=0.
+[^153]: HF 4827 (Minnesota, 2022), https://web.archive.org/web/20230224050611/https://www.revisor.mn.gov/bills/text.php?number=HF4827&type=bill&version=0&session=ls92&session_year=2022&session_number=0.
 [^154]: SB 1834 (Florida), Header.
 [^155]: SB 1834 (Florida), Header.
 [^156]: SB 1834 (Florida), Sec. 1.
