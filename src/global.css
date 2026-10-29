@@ -78,6 +78,14 @@ margin: 0.5rem 0;
 text-transform: uppercase;
 font-stretch: 105%;
 }
+/* The line of jump links at the top of the Writing and Links pages. It also
+   serves keyboard and screen-reader users who want a section directly. */
+.jump{
+font-size: 80%;
+font-family: monospace;
+font-weight: bold;
+margin: 0 0 1rem;
+}
 hr{
 border: none;
 border: 3px solid black;

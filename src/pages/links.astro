@@ -7,9 +7,13 @@ import { linksHtml } from '../lib/markdown';
 // Writing page's Wikipedia section this is a copy, not a live fetch, so
 // edit freely. The list itself is src/content/links.md. Webrings have
 // their own page, /webrings.
+//
+// The jump line at the top is built from the Markdown's ## headings, so a
+// section added or renamed in links.md shows up there on the next build.
 const links = await getEntry('pages', 'links');
+const sections = (links?.rendered?.metadata?.headings ?? []).filter((h) => h.depth === 2);
 ---
-<Layout title="Thadeus Smith – Links" description="Books and websites Thadeus Smith recommends.">
+<Layout title="Thadeus Smith – Links" description="Websites and online things Thadeus Smith recommends.">
 <style>
 /* The list comes from src/content/links.md, so its elements are not part of
    this template and Astro's scoped styles would skip them. :global() lets
@@ -33,6 +37,28 @@ opacity: 70%;
 display: block;
 margin-top: 0.25rem;
 }
+/* Section headings, matching the Writing page: ## is a plain h3,
+   ### the small monospace capitals used for the Wikipedia groups. */
+main :global(h3){
+margin: 2rem 0 0.5rem;
+}
+main :global(h4){
+font-size: 1rem;
+font-family: monospace;
+font-weight: bold;
+text-transform: uppercase;
+margin: 1rem 0 0.25rem;
+}
+main :global(h5){
+font-size: 0.9rem;
+font-family: monospace;
+font-weight: bold;
+margin: 0.75rem 0 0.25rem;
+}
+/* Keep a jumped-to heading clear of the fixed frame at the top. */
+main :global(h3), main :global(h4){
+scroll-margin-top: 1.5rem;
+}
 @media screen and (max-width: 800px) {
   main :global(ul.links li){
     border-left: 4px solid;
@@ -41,6 +67,7 @@ margin-top: 0.25rem;
 }
 </style>
 <main id="main">
+{sections.length > 0 && <p class="jump">{sections.map((h, i) => <>{i > 0 && ' · '}<a href={`#${h.slug}`}>{h.text}</a></>)}</p>}
 <h2>Links</h2>
 <Fragment set:html={linksHtml(links?.rendered?.html ?? '')} />
 </main>
