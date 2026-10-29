@@ -6,6 +6,6 @@ next:
 approved: false
 footer: false
 footerLabel:
-order: 20
+order: 50
 ---
 A ring of personal sites worth wandering.
