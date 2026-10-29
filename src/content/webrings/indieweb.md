@@ -8,4 +8,4 @@ footer: true
 footerLabel: 🕸💍
 order: 10
 ---
-A ring of personal sites that support IndieWeb sign-in.
+A ring of personal sites that make use of [IndieWeb building blocks](https://indieweb.org/building-blocks).
