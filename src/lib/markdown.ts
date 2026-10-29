@@ -47,6 +47,10 @@ function bylineIndex(html: string): number {
  */
 export function linksHtml(html: string): string {
   return html
+    // The page title is the <h2>, so the Markdown's ## sections become <h3>,
+    // ### subsections <h4> and #### <h5>. The ids Astro added are kept, so
+    // the jump links still land on them.
+    .replace(/<(\/?)h([2-5])\b/g, (_, slash: string, n: string) => `<${slash}h${Number(n) + 1}`)
     .replace(/<ul>/g, '<ul class="links">')
     .replace(/<li>([\s\S]*?)<\/li>/g, (_, inner: string) => {
       const text = unwrap(inner);

@@ -101,14 +101,22 @@ To build offline, set `FETCH_CACHE_DIR=.fetch-cache` (gitignored): responses are
 
 ## Links page
 
-The list is `src/content/links.md`, hand-maintained. It was seeded from the Recommended Reading lists on the Wikipedia user page in October 2026 but is not synced. Each `###` heading is a section, and each item is two lines: the title (with " by author" if there is one), then the description on the next line, indented to line up with the title:
+The list is `src/content/links.md`, hand-maintained, and limited to things a visitor can open online. Each `##` heading is a section and each `###` heading a subsection (`####` also works, one level further down). The line of jump links at the top of the page is built from the `##` headings, so adding, renaming or reordering a section there updates it on the next build. Empty sections still show, heading only, until they have entries.
+
+Each item is two lines: the title (with " by author" if there is one), then the description on the next line, indented to line up with the title:
 
 ```
-- [*Piranesi*](https://en.wikipedia.org/wiki/Piranesi_(novel)) by [Susanna Clarke](https://en.wikipedia.org/wiki/Susanna_Clarke)
-  A quick, fun read about a 'lil guy wandering a mysterious house.
+## Reading
+
+### Internet fiction
+
+- [The SCP Foundation](https://scp-wiki.wikidot.com/)
+  The single greatest work of collaborative fiction to have ever existed.
 ```
 
 The title shows in bold and the description in the small grey type below it. `src/pages/links.astro` is the template.
+
+The book recommendations that used to be on this page are kept, unpublished, in `src/content/_archive/links-books.md`. Nothing in `src/content/_archive/` appears on the site.
 
 ## Webrings
 
