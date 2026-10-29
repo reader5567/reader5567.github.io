@@ -1,15 +1,13 @@
 ---
 import Layout from '../layout.astro';
 import { getEntry } from 'astro:content';
-import { site } from '../site';
 import { linksHtml } from '../lib/markdown';
 // A links page. Seeded (October 2026) from the "Recommended Reading" lists
 // on https://en.wikipedia.org/wiki/User:ThadeusOfNazereth; unlike the
 // Writing page's Wikipedia section this is a copy, not a live fetch, so
-// edit freely. The list itself is src/content/links.md. The Wayward
-// Webring block appears once src/site.ts says the application was approved.
+// edit freely. The list itself is src/content/links.md. Webrings have
+// their own page, /webrings.
 const links = await getEntry('pages', 'links');
-const ring = site.waywardWebring;
 ---
 <Layout title="Thadeus Smith – Links" description="Books and websites Thadeus Smith recommends.">
 <style>
@@ -35,16 +33,8 @@ opacity: 70%;
 display: block;
 margin-top: 0.25rem;
 }
-.webring{
-border-left: 6px solid;
-padding-left: 0.5rem;
-margin: 1rem 0 2rem;
-}
-.webring p{
-margin: 0.5rem 0;
-}
 @media screen and (max-width: 800px) {
-  main :global(ul.links li), .webring{
+  main :global(ul.links li){
     border-left: 4px solid;
     padding-left: 0.25rem;
   }
@@ -53,15 +43,5 @@ margin: 0.5rem 0;
 <main id="main">
 <h2>Links</h2>
 <Fragment set:html={linksHtml(links?.rendered?.html ?? '')} />
-
-{ring.approved && (
-  <>
-    <h3>Webring</h3>
-    <div class="webring">
-      <p>This site is part of the <a href={ring.home}>Wayward Webring</a>, a ring of personal sites worth wandering.</p>
-      <p><a href={ring.previous}>← previous site</a> · <a href={ring.next}>next site →</a></p>
-    </div>
-  </>
-)}
 </main>
 </Layout>

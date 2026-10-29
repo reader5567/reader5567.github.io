@@ -20,11 +20,11 @@ their window).
 - `src/layout.astro` is the shared page shell (head, header, footer). Every page uses it.
 - `src/header.astro` is the name and the nav: CV, Words, Links, Now. `src/footer.astro` is the footer, including the design credit and the "Elsewhere" row of profile links (edit those in `src/site.ts`).
 - `src/global.css` holds all site-wide styles, including the print stylesheet.
-- `src/pages/` holds one file per page: `index.astro` (résumé), `writing.astro`, `now.astro`, `links.astro`, plus `photo-of-the-day.jpg.ts` for the Commons photo. These are the templates: layout and styles.
-- `src/content/` holds the words for the Résumé, Now and Links pages as Markdown (see below). `src/content.config.ts` describes those files, and `src/lib/markdown.ts` turns them into the markup the templates have always used, so the design does not change.
+- `src/pages/` holds one file per page: `index.astro` (résumé), `writing.astro`, `now.astro`, `links.astro`, `webrings.astro`, plus `photo-of-the-day.jpg.ts` for the Commons photo. These are the templates: layout and styles.
+- `src/content/` holds the words for the Résumé, Now, Links and Webrings pages as Markdown (see below). `src/content.config.ts` describes those files, and `src/lib/markdown.ts` turns them into the markup the templates have always used, so the design does not change.
 - `src/pages/writing/` holds the essays, one Markdown file each.
 - `src/lib/` holds the build-time fetchers (`letterboxd.ts`, `commons.ts`, `wikipedia.ts`) and the shared `fetch.ts` helper. Nothing in here runs in the visitor's browser.
-- `src/site.ts` holds settings you may want to edit by hand: the footer's profile links, webring URLs, how many films the Writing page shows, and your profile (name, note, photo).
+- `src/site.ts` holds settings you may want to edit by hand: the footer's profile links, how many films the Writing page shows, and your profile (name, note, photo).
 
 ## Editing in Obsidian
 
@@ -35,6 +35,7 @@ Everything you write lives in Markdown, so the whole repository can be opened as
 | Résumé | `src/content/resume/` |
 | Now | `src/content/now.md` |
 | Links | `src/content/links.md` |
+| Webrings | `src/content/webrings/` |
 | Writing | `src/pages/writing/` (drafts in `src/pages/writing/_drafts/`) |
 
 The one sentence about you on the Now page (and in the homepage h-card) is `profile.note` in `src/site.ts`, which Obsidian does not show.
@@ -107,11 +108,33 @@ The list is `src/content/links.md`, hand-maintained. It was seeded from the Reco
   A quick, fun read about a 'lil guy wandering a mysterious house.
 ```
 
-The title shows in bold and the description in the small grey type below it. `src/pages/links.astro` is the template. The Wayward Webring block appears once `src/site.ts` marks the application approved.
+The title shows in bold and the description in the small grey type below it. `src/pages/links.astro` is the template.
 
 ## Webrings
 
-`src/site.ts` holds the IndieWeb webring URLs (shown in the footer on every page, which satisfies the ring's homepage check) and the Wayward Webring URLs (shown on `/links`). Both are plain links; no scripts.
+Each webring is one Markdown file in `src/content/webrings/`. `/webrings` lists every ring that is ready, and the footer's Webring row links to it with "more". Plain links only; no scripts.
+
+```
+---
+name: Wayward Webring
+home: https://waywardweb.org/
+previous: https://…
+next: https://…
+approved: true
+footer: false
+footerLabel:
+order: 20
+---
+A ring of personal sites worth wandering.
+```
+
+- `name` and `home` are the ring's name and its home page. The body is the one-line description shown under the name.
+- `previous` and `next` are the neighbor URLs the ring gives you when you join (often on its dashboard or in its "webring code"). If a ring gives you a code snippet instead, copy the two `href` URLs out of it.
+- `approved`: the ring appears only when this is ticked **and** `previous` and `next` are filled in. Add the file when you apply, tick it when you're accepted.
+- `footer`: also show the ring as a row in the footer of every page. The IndieWeb ring needs this, because its checker looks for the links on the homepage and marks the site inactive if they're missing. Each footer ring is another row, so only tick it for rings that require it. `footerLabel` is the text of the middle link there (the IndieWeb ring uses 🕸💍); blank uses the name.
+- `order`: position on `/webrings`, lowest first, in tens like the résumé.
+
+Before joining a ring, check its rules for where the links have to go. A ring that only needs to be linked from somewhere on the site is satisfied by `/webrings`; one that checks the homepage needs `footer` ticked.
 
 ## Credits
 
