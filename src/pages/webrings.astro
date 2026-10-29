@@ -40,7 +40,7 @@ margin-top: 0.25rem;
 </style>
 <main id="main">
 <h2>Webrings</h2>
-<p>This site is part of these webrings. Follow a ring to wander through other personal sites.</p>
+<p>A <a href="https://en.wikipedia.org/wiki/Webring">webring</a> is a collection of sites that link to each other, allowing discoverability without relying on algorithms. Follow a ring to wander through other sites!</p>
 {rings.map((r) => (
   <div class="webring">
     <p><a class="name" href={r.home}>{r.name}</a>{r.about && <span class="about" set:html={r.about} />}</p>
