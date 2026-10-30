@@ -20,6 +20,8 @@ This is a big collection of things I like, find interesting, recommend, and/or a
 
 - [Eclectic Orthodoxy](https://afkimel.wordpress.com/)
   Fr. Adrian Kimel's blog, my favorite religion website and an invaluable resource for Christian Universalism.
+- [Web Curios](https://webcurios.co.uk/)
+  A bi-weekly roundup of unique corners on the internet (and where I discovered many of the links on this page).
 
 ### Internet fiction
 
@@ -35,8 +37,12 @@ This is a big collection of things I like, find interesting, recommend, and/or a
 ## Software
 ### Desktop
 
+- [Darktable](https://www.darktable.org/)
+  An open source RAW photo editor with virtually unlimited customizations. If you're not taking highly stylized photos, I highly recommend it.
+- [Digikam](https://www.digikam.org/)
+  A free digital asset manager that makes pruning the hundreds of photos I take into a significantly more usable amount.
 - [Firefox](https://www.firefox.com/en-US/)
-  Has been my browser of choice since I was 12 years old. Non-profit, open-source, and privacy-first.
+  Has been my browser of choice since I was 12 years old. Non-profit, open source, and privacy-first.
 - [Obsidian](https://obsidian.md/)
   A fantastic free markdown editor that all the pages of this site are written in and then pushed live with the [Git](https://community.obsidian.md/plugins/obsidian-git) plugin.
 ### Extensions
@@ -52,7 +58,7 @@ This is a big collection of things I like, find interesting, recommend, and/or a
 - [Reddit Enhancement Suite](https://redditenhancementsuite.com/)
   An extension with massive quality-of-life improvements to Reddit.
 - [SponsorBlock](https://sponsor.ajay.app/)
-  An open-source, crowdsourced database of sponsor segments in YouTube videos that automatically skips ad reads.
+  An open source, crowdsourced database of sponsor segments in YouTube videos that automatically skips ad reads.
 - [uBlock Origin](https://github.com/gorhill/uBlock#ublock-origin)
   The best ad blocker for Firefox.
 ### Games
@@ -68,3 +74,6 @@ This is a big collection of things I like, find interesting, recommend, and/or a
 ## Wikipedia-ing
 
 ## Directories
+
+- [Internet Phone Book](https://internetphonebook.net/)
+  A physical collection of personal websites, complete with a phone you can dial to visit each site.
