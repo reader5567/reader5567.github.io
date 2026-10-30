@@ -35,6 +35,8 @@ This is a big collection of things I like, find interesting, recommend, and/or a
 
 ### Blogs
 
+- [ANVHN](https://anhvn.com/blog/)
+  A very sweet blog by a Canadian designer, mostly keeping track of media and life.
 - [Eclectic Orthodoxy](https://afkimel.wordpress.com/)
   Fr. Adrian Kimel's blog, my favorite religion website and an invaluable resource for Christian Universalism.
 - [Web Curios](https://webcurios.co.uk/)
@@ -66,6 +68,8 @@ This is a big collection of things I like, find interesting, recommend, and/or a
 
 - [Bypass Paywalls Clean](https://gitflic.ru/project/magnolia1234/bypass-paywalls-firefox-clean)
   A very nifty tool for bypassing paywalls on many news sites.
+- [Feedbro](https://addons.mozilla.org/en-US/firefox/addon/feedbroreader/)
+  A lightweight RSS reader for Firefox that I use to keep up with many of the blogs and publications on this page.
 - [Indie Wiki Buddy](https://getindie.wiki/)
   A project of [Kevin Payravi](https://kevin.payravi.dev/) that redirects links from corporate-owned fan sites to independent alternatives.
 - [Old Reddit Redirect](https://github.com/tom-james-watson/old-reddit-redirect)
