@@ -33,7 +33,28 @@ This is a big collection of things I like, find interesting, recommend, and/or a
 ### Webcomics
 
 ## Software
+### Desktop
 
+- [Firefox](https://www.firefox.com/en-US/)
+  Has been my browser of choice since I was 12 years old. Non-profit, open-source, and privacy-first.
+- [Obsidian](https://obsidian.md/)
+  A fantastic free markdown editor that all the pages of this site are written in and then pushed live with the [Git](https://community.obsidian.md/plugins/obsidian-git) plugin.
+### Extensions
+
+- [Bypass Paywalls Clean](https://gitflic.ru/project/magnolia1234/bypass-paywalls-firefox-clean)
+  A very nifty tool for bypassing paywalls on many news sites.
+- [Indie Wiki Buddy](https://getindie.wiki/)
+  A project of [Kevin Payravi](https://kevin.payravi.dev/) that redirects links from corporate-owned fan sites to independent alternatives.
+- [Old Reddit Redirect](https://github.com/tom-james-watson/old-reddit-redirect)
+  A lightweight extension that automatically converts reddit.com links to old.reddit.com.
+- [RECAP](https://free.law/recap/)
+  An extension that automatically uploads any files purchased on PACER to the RECAP Archive, thereby making them permanently publicly available.
+- [Reddit Enhancement Suite](https://redditenhancementsuite.com/)
+  An extension with massive quality-of-life improvements to Reddit.
+- [SponsorBlock](https://sponsor.ajay.app/)
+  An open-source, crowdsourced database of sponsor segments in YouTube videos that automatically skips ad reads.
+- [uBlock Origin](https://github.com/gorhill/uBlock#ublock-origin)
+  The best ad blocker for Firefox.
 ### Games
 
 ### Creative
