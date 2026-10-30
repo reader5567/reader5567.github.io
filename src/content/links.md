@@ -28,6 +28,10 @@ This is a big collection of things I like, find interesting, recommend, and/or a
   This is a truly sprawling series of blog posts by Tom Mahood, an engineer and casual blogger who discovered the bodies of a German family who went missing in Death Valley in 1996.
 
 ## Listening
+### Music
+- *[Mouth Sounds](https://www.neilcic.com/mouthsounds/)* by Neil Cicieraga
+  The start of a quartet of very strange, very enthralling mashup songs
+### Podcasts
 
 ## Photography
 
@@ -37,20 +41,28 @@ This is a big collection of things I like, find interesting, recommend, and/or a
 
 - [ANVHN](https://anhvn.com/blog/)
   A very sweet blog by a Canadian designer, mostly keeping track of media and life.
+- [Astral Codex Ten](https://www.astralcodexten.com/)
+  The evolution of Slate Star Codex. Helpful for keeping up with futurism news, although he tends to float a little too close to some right-wing ideologies for my taste.
 - [Eclectic Orthodoxy](https://afkimel.wordpress.com/)
   Fr. Adrian Kimel's blog, my favorite religion website and an invaluable resource for Christian Universalism.
+- [File 770](https://file770.com/)
+  A long-running fanzine by [Mike Glyer](https://en.wikipedia.org/wiki/Mike_Glyer) and associates, which was my introduction to the wonderful world of fandom.
+- [Joel Chrono](https://joelchrono.xyz/)
+  A very much stream-of-consciousness blog from a Mexican sysadmin and hobbyist.
 - [Web Curios](https://webcurios.co.uk/)
   A bi-weekly roundup of unique corners on the internet (and where I discovered many of the links on this page).
-
 ### Internet fiction
-
+- [17776](https://www.sbnation.com/a/17776-football)
+  A sprawling, speculative narrative about what football will look like in the far future.
 - [Mystery Flesh Pit National Park](https://www.mysteryfleshpitnationalpark.com/) 
   A fascinating work of cosmic horror worldbuilding by Trevor Roberts, which feels all too plausible in today's America. 
 - [The SCP Foundation](https://scp-wiki.wikidot.com/)
   The single greatest work of collaborative fiction to have ever existed. Now pushing 10,000 articles!
-
 ### Periodicals
-
+- [The Comics Journal](https://www.tcj.com/)
+  A place for more intelligent comics criticism than the average pop culture-oriented website.
+- [The HTML Review](https://thehtml.review)
+  A regular online publication of literature designed for the internet, in all the beautiful forms that can take.
 ### Webcomics
 
 ## Software
