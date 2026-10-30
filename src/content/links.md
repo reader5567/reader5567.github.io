@@ -1,5 +1,22 @@
 This is a big collection of things I like, find interesting, recommend, and/or actively use. I hope you do too!
 
+## Dailies
+- [Framed](https://framed.wtf/)
+  A daily movie trivia game from still shots and posters.
+- [Geoguessr](https://www.geoguessr.com/)
+  The original find-out-where-you-are game.
+- [Krillion](https://krillion.io/)
+  A trivia game where rarer answers sink you deeper into the ocean.
+- [Lessgames](https://lessgames.com/)
+  A collection of five lightweight dailies.
+- [Patches](https://www.linkedin.com/games/patches/)
+  Fill in a grid with a set of shapes.
+- [Timeguessr](https://timeguessr.com/)
+  Find out when (and where) you are.
+- [Wordle](https://www.nytimes.com/games/wordle/index.html)
+  Six chances to guess a single five-letter word.
+- [Zip](https://www.linkedin.com/games/zip/)
+  Fill in a grid with a single line (no backtracks).
 ## Favorites
 - [Websites Done Cheap](https://cheap.urls.loan/)
   Also linked in the footer of this site, but [Eli Beaton](https://elijah.beaton.page/) is a master designer and I am very, very grateful that I learned of his cheap website service before his prices became slightly-less-cheap.
