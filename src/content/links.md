@@ -61,6 +61,8 @@ This is a big collection of things I like, find interesting, recommend, and/or a
 ### Periodicals
 - [The Comics Journal](https://www.tcj.com/)
   A place for more intelligent comics criticism than the average pop culture-oriented website.
+- [The Drift](https://www.thedriftmag.com/)
+  A magazine of cultural criticism, narrative nonfiction, and short stories.
 - [The HTML Review](https://thehtml.review)
   A regular online publication of literature designed for the internet, in all the beautiful forms that can take.
 ### Webcomics
@@ -76,6 +78,8 @@ This is a big collection of things I like, find interesting, recommend, and/or a
   Has been my browser of choice since I was 12 years old. Non-profit, open source, and privacy-first.
 - [Obsidian](https://obsidian.md/)
   A fantastic free markdown editor that all the pages of this site are written in and then pushed live with the [Git](https://community.obsidian.md/plugins/obsidian-git) plugin.
+- [Pangram](https://www.pangram.com/)
+  Not quite software but close enough. The most reliable of the AI detectors, and although I think my AI-slop-o-meter is quite high, it's always nice to have confirmation.
 ### Extensions
 
 - [Bypass Paywalls Clean](https://gitflic.ru/project/magnolia1234/bypass-paywalls-firefox-clean)
@@ -96,14 +100,9 @@ This is a big collection of things I like, find interesting, recommend, and/or a
   The best ad blocker for Firefox.
 ### Games
 
-### Creative
-
-### Productivity
-
-### Web tools
-
 ## Video
-
+- [Taskmaster](https://www.youtube.com/@Taskmaster)
+  Every single episode of one of the best game shows ever created, from every different version, is available on YouTube for free.
 ## Wikipedia-ing
 
 ## Directories
