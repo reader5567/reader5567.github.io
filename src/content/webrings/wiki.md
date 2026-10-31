@@ -1,8 +1,8 @@
 ---
 name: webring.wiki
 home: https://webring.wiki/
-previous: https://webring.wiki/previous?host=thadeussmith.com
-next: https://webring.wiki/next?host=thadeussmith.com
+previous: https://webring.wiki/previous?host=thadeussmith.com/webrings
+next: https://webring.wiki/next?host=thadeussmith.com/webrings
 approved: true
 footer: false
 footerLabel:
