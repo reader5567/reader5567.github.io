@@ -18,15 +18,16 @@ This is a big collection of things I like, find interesting, recommend, and/or a
 - [Zip](https://www.linkedin.com/games/zip/)
   Fill in a grid with a single line (no backtracks).
 ## Favorites
-- [Websites Done Cheap](https://cheap.urls.loan/)
-  Also linked in the footer of this site, but [Eli Beaton](https://elijah.beaton.page/) is a master designer and I am very, very grateful that I learned of his cheap website service before his prices became slightly-less-cheap.
-## Interesting Links
-
 - [*Antilibraries*](https://www.antilibrari.es/)
   One of my favorite "hidden gem" websites: a collection of books that have yet to be read. It inspired me to create my own antilibrary, which quickly just became my actual library.
 - [The Hunt for the Death Valley Germans](https://otherhand.org/home-page/search-and-rescue/the-hunt-for-the-death-valley-germans/)
   This is a truly sprawling series of blog posts by Tom Mahood, an engineer and casual blogger who discovered the bodies of a German family who went missing in Death Valley in 1996.
-
+- [Lost Media Wiki](https://lostmediawiki.com/Home)
+  A very cool website where people with way too much time on their hands track down things that have gone missing.
+- [Tiny Awards](https://tinyawards.net/)
+  An annual award ceremony for the most creative handmade sites on the internet.
+- [Websites Done Cheap](https://cheap.urls.loan/)
+  Also linked in the footer of this site, but [Eli Beaton](https://elijah.beaton.page/) is a master designer and I am very, very grateful that I learned of his cheap website service before his prices became slightly-less-cheap.
 ## Listening
 ### Music
 - *[Mouth Sounds](https://www.neilcic.com/mouthsounds/)* by Neil Cicieraga
@@ -58,15 +59,28 @@ This is a big collection of things I like, find interesting, recommend, and/or a
   A fascinating work of cosmic horror worldbuilding by Trevor Roberts, which feels all too plausible in today's America. 
 - [The SCP Foundation](https://scp-wiki.wikidot.com/)
   The single greatest work of collaborative fiction to have ever existed. Now pushing 10,000 articles!
+### News
+- [Aftermath](https://aftermath.site)
+  A worker-owned news organization covering internet culture, run by laid-off staffers from the once-great websites Kotaku and Vice.
+- [Rest of World](https://restofworld.org/)
+  Technology news from (as the title suggests) the rest of the world.
+- [Rock Paper Shotgun](https://www.rockpapershotgun.com/)
+  A PC game review site that covers AAA titles and indie releases in equal measure.
 ### Periodicals
 - [The Comics Journal](https://www.tcj.com/)
   A place for more intelligent comics criticism than the average pop culture-oriented website.
 - [The Drift](https://www.thedriftmag.com/)
   A magazine of cultural criticism, narrative nonfiction, and short stories.
+- [Harper's Magazine](https://harpers.org/)
+  The oldest, and most consistently interesting, magazine in the United States.
 - [The HTML Review](https://thehtml.review)
   A regular online publication of literature designed for the internet, in all the beautiful forms that can take.
-### Webcomics
-
+- [The New Atlantis](https://www.thenewatlantis.com/)
+  A pro-human journal of science and technology. About as conservative as I'm willing to go these days.
+- [The New York Review of Books](https://www.nybooks.com/)
+  A regular magazine covering literature, culture, economics, science, politics, and everything in between.
+- [Noema](https://www.noemamag.com/)
+  A publication of the [Berggruen Institute](https://berggruen.org/) that releases longform journalism at the intersection of technology, philosophy, and law.
 ## Software
 ### Desktop
 
@@ -99,7 +113,10 @@ This is a big collection of things I like, find interesting, recommend, and/or a
 - [uBlock Origin](https://github.com/gorhill/uBlock#ublock-origin)
   The best ad blocker for Firefox.
 ### Games
-
+- [Flashpoint Archive](https://flashpointarchive.org/)
+  This is an archive of over 200,000 web games that would otherwise have gone missing, including Flash games, Shockwave games, and HTML5 games.
+- [neal.fun](https://neal.fun/)
+  (Fun) games by Neal Agarwal.
 ## Video
 - [Taskmaster](https://www.youtube.com/@Taskmaster)
   Every single episode of one of the best game shows ever created, from every different version, is available on YouTube for free.
