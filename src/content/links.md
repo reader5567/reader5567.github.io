@@ -36,10 +36,6 @@ This is a big collection of things I like, find interesting, recommend, and/or a
   A fantastic weekly newsletter of music spanning by every genre and every country.
 - *[Mouth Sounds](https://www.neilcic.com/mouthsounds/)* by Neil Cicieraga
   The start of a quartet of very strange, very enthralling mashup songs
-### Podcasts
-
-## Photography
-
 ## Reading
 
 ### Blogs
@@ -116,7 +112,6 @@ This is a big collection of things I like, find interesting, recommend, and/or a
   A monthly magazine at the intersection of economics, science, and technology.
 ## Software
 ### Desktop
-
 - [Darktable](https://www.darktable.org/)
   An open source RAW photo editor with virtually unlimited customizations. If you're not taking highly stylized photos, I highly recommend it.
 - [Digikam](https://www.digikam.org/)
@@ -128,7 +123,6 @@ This is a big collection of things I like, find interesting, recommend, and/or a
 - [Pangram](https://www.pangram.com/)
   Not quite software but close enough. The most reliable of the AI detectors, and although I think my AI-slop-o-meter is quite high, it's always nice to have confirmation.
 ### Extensions
-
 - [Bypass Paywalls Clean](https://gitflic.ru/project/magnolia1234/bypass-paywalls-firefox-clean)
   A very nifty tool for bypassing paywalls on many news sites.
 - [Feedbro](https://addons.mozilla.org/en-US/firefox/addon/feedbroreader/)
