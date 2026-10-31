@@ -24,12 +24,16 @@ This is a big collection of things I like, find interesting, recommend, and/or a
   This is a truly sprawling series of blog posts by Tom Mahood, an engineer and casual blogger who discovered the bodies of a German family who went missing in Death Valley in 1996.
 - [Lost Media Wiki](https://lostmediawiki.com/Home)
   A very cool website where people with way too much time on their hands track down things that have gone missing.
+- [The MIllions](https://themillions.com/)
+  A fantastic hub for literary criticism, arts, and culture. It is sadly on a "temporary" haitus, but the archives are lengthy and well worth perusing.
 - [Tiny Awards](https://tinyawards.net/)
   An annual award ceremony for the most creative handmade sites on the internet.
 - [Websites Done Cheap](https://cheap.urls.loan/)
   Also linked in the footer of this site, but [Eli Beaton](https://elijah.beaton.page/) is a master designer and I am very, very grateful that I learned of his cheap website service before his prices became slightly-less-cheap.
 ## Listening
 ### Music
+- *[Dinner Music](https://dinnermusic.substack.com/)*
+  A fantastic weekly newsletter of music spanning by every genre and every country.
 - *[Mouth Sounds](https://www.neilcic.com/mouthsounds/)* by Neil Cicieraga
   The start of a quartet of very strange, very enthralling mashup songs
 ### Podcasts
@@ -46,22 +50,49 @@ This is a big collection of things I like, find interesting, recommend, and/or a
   The evolution of Slate Star Codex. Helpful for keeping up with futurism news, although he tends to float a little too close to some right-wing ideologies for my taste.
 - [Eclectic Orthodoxy](https://afkimel.wordpress.com/)
   Fr. Adrian Kimel's blog, my favorite religion website and an invaluable resource for Christian Universalism.
+- [Embedded](https://embedded.substack.com/)
+  A regular internet-focused newsletter. I'm especially partial to their "[My Internet](https://embedded.substack.com/t/my-internet)" series, which covers the internet habits of microcelebrities.
 - [File 770](https://file770.com/)
   A long-running fanzine by [Mike Glyer](https://en.wikipedia.org/wiki/Mike_Glyer) and associates, which was my introduction to the wonderful world of fandom.
 - [Joel Chrono](https://joelchrono.xyz/)
   A very much stream-of-consciousness blog from a Mexican sysadmin and hobbyist.
-- [Web Curios](https://webcurios.co.uk/)
-  A bi-weekly roundup of unique corners on the internet (and where I discovered many of the links on this page).
-### Internet fiction
+- [A Reading Life](https://petya.substack.com/)
+  A blog about reading and how it changes our lives.
+### Fiction
 - [17776](https://www.sbnation.com/a/17776-football)
   A sprawling, speculative narrative about what football will look like in the far future.
+- [Clarkesworld](https://clarkesworldmagazine.com/)
+  The gold-standard science fiction & fantasy magazine, with over 200 completely free issues available online.
 - [Mystery Flesh Pit National Park](https://www.mysteryfleshpitnationalpark.com/) 
   A fascinating work of cosmic horror worldbuilding by Trevor Roberts, which feels all too plausible in today's America. 
 - [The SCP Foundation](https://scp-wiki.wikidot.com/)
   The single greatest work of collaborative fiction to have ever existed. Now pushing 10,000 articles!
+### Link Roundups
+- [After School](https://afterschool.substack.com/)
+  A mostly-daily collection of links related to consumerism and Gen Z, curated by Casey Lewis.
+- [Daily Links](https://readsfast.substack.com/)
+  Mostly AI-related news, daily.
+- [Links I Would Gchat You If We Were Friends](https://linksiwouldgchatyou.substack.com/)
+  A weekly link roundup that covers a whole lot of seemingly-random stuff.
+- [Naive Weekly](https://kristoffer.substack.com/)
+  A semi-regular roundup of links related to the quiet, small, and handmade web.
+- *[SIC](https://sic.substack.com)*
+  An absolutely gargantuan collection of links.
+- [The Sunday Long Read](https://sundaylongread.com/)
+  A newsletter of longform journalism, released every Sunday.
+- [Today in Tabs](https://www.todayintabs.com/)
+  Another weekly link round-up covering all sorts of things that happen on the Internet.
+- [Waxy](https://waxy.org/category/links/)
+  A long-running daily round-up of links related to technology and internet fiction.
+- [Web Curios](https://webcurios.co.uk/)
+  A bi-weekly roundup of unique corners on the internet (and where I discovered many of the links on this page).
 ### News
 - [Aftermath](https://aftermath.site)
   A worker-owned news organization covering internet culture, run by laid-off staffers from the once-great websites Kotaku and Vice.
+- [The Argument](https://www.theargumentmag.com)
+  A news organization focused on persuasion in defense of liberal democracy.
+- [Foreign Exchanges](https://www.foreignexchanges.news/)
+  A daily roundup of news from outside the United States.
 - [Rest of World](https://restofworld.org/)
   Technology news from (as the title suggests) the rest of the world.
 - [Rock Paper Shotgun](https://www.rockpapershotgun.com/)
@@ -81,6 +112,8 @@ This is a big collection of things I like, find interesting, recommend, and/or a
   A regular magazine covering literature, culture, economics, science, politics, and everything in between.
 - [Noema](https://www.noemamag.com/)
   A publication of the [Berggruen Institute](https://berggruen.org/) that releases longform journalism at the intersection of technology, philosophy, and law.
+- [Works in Progress](https://worksinprogress.co/)
+  A monthly magazine at the intersection of economics, science, and technology.
 ## Software
 ### Desktop
 
@@ -121,8 +154,12 @@ This is a big collection of things I like, find interesting, recommend, and/or a
 - [Taskmaster](https://www.youtube.com/@Taskmaster)
   Every single episode of one of the best game shows ever created, from every different version, is available on YouTube for free.
 ## Wikipedia-ing
-
+- [Diff](https://diff.wikimedia.org/)
+  The official blog of the Wikimedia Foundation, covering the Wikimedia movement at large.
+- [The Signpost](https://en.wikipedia.org/wiki/Wikipedia:Wikipedia_Signpost)
+  The (un)official newspaper of the English Wikipedia, written entirely by volunteers.
 ## Directories
-
+- [Bubbles](https://bubbles.town)
+  This is a sort-of-incomplete attempt at building a Reddit alternative, but solely for personal blog posts. I like their weekly briefing that links out to a bunch of semi-popular posts.
 - [Internet Phone Book](https://internetphonebook.net/)
   A physical collection of personal websites, complete with a phone you can dial to visit each site.
