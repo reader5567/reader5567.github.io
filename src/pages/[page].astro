@@ -1,0 +1,41 @@
+---
+// Pages written entirely in Obsidian: /ai and /death (any page marked
+// `text: true` in src/site.ts). Each is the Markdown file
+// src/content/<name>.md under a heading, with nothing else around it.
+//
+// A page exists only while its file sits directly in src/content/. Keep a
+// draft in src/content/_drafts/ (which is never published) and move the
+// file up when it is ready; the page, and its place on the sitemap, appear
+// on the next build. Moving it back unpublishes it.
+//
+// An optional `revised` property (a date) shows as a "Revised" line in the
+// footer, so readers can see when the text was last looked over.
+import Layout from '../layout.astro';
+import { getCollection } from 'astro:content';
+import { site } from '../site';
+
+export async function getStaticPaths() {
+  const files = await getCollection('pages');
+  return files
+    .filter((file) => site.pages['/' + file.id]?.text)
+    .map((file) => ({ params: { page: file.id }, props: { file, info: site.pages['/' + file.id] } }));
+}
+
+const { file, info } = Astro.props;
+const revised = file.data?.revised ? new Date(file.data.revised) : null;
+const rows = revised && !isNaN(revised.getTime())
+  ? [{ label: 'Revised', text: revised.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UTC' }) }]
+  : [];
+---
+<Layout
+  title={`Thadeus Smith – ${info.label}`}
+  description={info.description}
+  noindex={info.noindex}
+  showSite={info.showSite ?? true}
+  rows={rows}
+>
+<article id="main">
+<h2>{info.label}</h2>
+<Fragment set:html={file.rendered?.html} />
+</article>
+</Layout>

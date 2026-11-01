@@ -41,7 +41,10 @@ const webrings = defineCollection({
   }),
 });
 
-// Single-file pages: now.md and links.md.
+// Single-file pages: now.md and links.md, plus the pages written entirely
+// in Obsidian (`text: true` in src/site.ts, such as ai.md and death.md).
+// The pattern only matches files directly in src/content/, so drafts in
+// src/content/_drafts/ and old text in src/content/_archive/ stay unpublished.
 const pages = defineCollection({
   loader: glob({ pattern: '*.md', base: './src/content' }),
 });

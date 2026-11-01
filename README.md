@@ -24,7 +24,8 @@ their window).
 - `src/content/` holds the words for the Résumé, Now, Links and Webrings pages as Markdown (see below). `src/content.config.ts` describes those files, and `src/lib/markdown.ts` turns them into the markup the templates have always used, so the design does not change.
 - `src/pages/writing/` holds the essays, one Markdown file each.
 - `src/lib/` holds the build-time fetchers (`letterboxd.ts`, `commons.ts`, `wikipedia.ts`) and the shared `fetch.ts` helper. Nothing in here runs in the visitor's browser.
-- `src/site.ts` holds settings you may want to edit by hand: the footer's profile links, how many films the Writing page shows, and your profile (name, note, photo).
+- `src/pages/[page].astro` is the template for pages written entirely in Obsidian (see "Text pages" below).
+- `src/site.ts` holds settings you may want to edit by hand: the footer's profile links, the list of pages (labels, descriptions, and which are hidden from search engines), how many films the Writing page shows, and your profile (name, note, photo).
 
 ## Editing in Obsidian
 
@@ -37,6 +38,13 @@ Everything you write lives in Markdown, so the whole repository can be opened as
 | Links | `src/content/links.md` |
 | Webrings | `src/content/webrings/` |
 | Writing | `src/pages/writing/` (drafts in `src/pages/writing/_drafts/`) |
+| AI, Death | `src/content/ai.md`, `src/content/death.md` (drafts in `src/content/_drafts/`) |
+
+### Text pages
+
+Some pages are nothing but your words under a heading: /ai and /death so far. Each is one Markdown file, and it is published only while it sits directly in `src/content/`. Write the draft in `src/content/_drafts/`, which is never published, and move the file up to `src/content/` when it is ready; moving it back takes the page down. An optional `revised` property (a date) shows as a "Revised" line in the footer.
+
+To add another text page, add its path to `pages` in `src/site.ts` with `text: true`. `noindex: true` keeps a page away from search engines and out of the XML sitemap; /death and /blank use it.
 
 The one sentence about you on the Now page (and in the homepage h-card) is `profile.note` in `src/site.ts`, which Obsidian does not show.
 
