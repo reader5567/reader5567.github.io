@@ -1,0 +1,91 @@
+---
+// Every page on the site, for people. (Search engines get the XML version at
+// /sitemap-index.xml, which leaves out the pages marked noindex.)
+//
+// Built from what exists at build time (src/lib/pages.ts), grouped and
+// described from `pages` in src/site.ts, plus each essay in
+// src/pages/writing/. A new page appears here on the next build: under its
+// group if it is in src/site.ts, otherwise under "Other", by path.
+import Layout from '../layout.astro';
+import { site } from '../site';
+import { livePages } from '../lib/pages';
+
+const info = site.pages['/sitemap'];
+const order = Object.keys(site.pages);
+const pages = (await livePages())
+  .sort((a, b) => (order.indexOf(a.path) + 1 || 999) - (order.indexOf(b.path) + 1 || 999) || a.path.localeCompare(b.path));
+
+type Entry = { href: string; name: string; about?: string };
+const groups = new Map<string, Entry[]>();
+const add = (group: string, entry: Entry) => groups.set(group, [...(groups.get(group) ?? []), entry]);
+
+for (const { path, info: page } of pages) {
+  if (page) add(page.group, { href: path, name: page.label, about: page.description });
+}
+
+// Essays, newest first, after the page groups that come before "Odds and ends".
+const posts = Object.values(import.meta.glob('./writing/*.md', { eager: true })) as any[];
+posts.sort((a, b) => Date.parse(b.frontmatter.date) - Date.parse(a.frontmatter.date));
+const essays: Entry[] = posts.map((post) => ({
+  href: post.url,
+  name: post.frontmatter.title,
+  about: new Date(post.frontmatter.date.replace('Z', '')).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }),
+}));
+
+const sections: [string, Entry[]][] = [];
+for (const [group, entries] of groups) {
+  if (group === 'Odds and ends' && essays.length) sections.push(['Essays', essays]);
+  sections.push([group, entries]);
+}
+if (essays.length && !sections.some(([g]) => g === 'Essays')) sections.push(['Essays', essays]);
+
+const other = pages.filter((p) => !p.info).map((p) => ({ href: p.path, name: p.path }));
+if (other.length) sections.push(['Other', other]);
+---
+<Layout title={`Thadeus Smith – ${info.label}`} description="Every page on Thadeus Smith's website.">
+<style>
+/* Same bordered entries as the Links page. */
+ul{
+list-style: none;
+margin: 0 0 2rem;
+padding: 0;
+}
+li{
+border-left: 6px solid;
+padding-left: 0.5rem;
+margin: 1rem 0;
+}
+.name{
+font-weight: 650;
+}
+.about{
+font-size: 85%;
+opacity: 70%;
+display: block;
+margin-top: 0.25rem;
+}
+h3{
+margin: 2rem 0 0.5rem;
+}
+@media screen and (max-width: 800px) {
+  li{
+    border-left: 4px solid;
+    padding-left: 0.25rem;
+  }
+}
+</style>
+<main id="main">
+<h2>{info.label}</h2>
+<p>Every page on this site. Some are linked from the header, some from the footer, and a few only from here.</p>
+{sections.map(([group, entries]) => (
+  <>
+    <h3>{group}</h3>
+    <ul>
+      {entries.map((e) => (
+        <li><a class="name" href={e.href}>{e.name}</a>{e.about && <span class="about">{e.about}</span>}</li>
+      ))}
+    </ul>
+  </>
+))}
+</main>
+</Layout>

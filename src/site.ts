@@ -7,16 +7,20 @@ export type PageInfo = {
   noindex?: boolean;
   text?: boolean;
   showSite?: boolean;
+  extra?: boolean;
 };
 
 export const site = {
   // The footer's profile links live in src/content/accounts/, one file per
   // account, so they can be edited in Obsidian.
 
-  // Every page, by path. The human-readable /sitemap (added in a later
-  // change) lists each page that exists under its `group`, with its
-  // `label` and `description`; a path listed here that has no page yet is
-  // skipped, and a page missing from here is still listed, by path.
+  // Every page, by path. The human-readable /sitemap lists each page that
+  // exists under its `group`, with its `label` and `description`; a path
+  // listed here that has no page yet is skipped, and a page missing from
+  // here is still listed, by path.
+  //
+  // `extra: true` also puts the page in the footer's Extras row (in
+  // alphabetical order, and only once the page exists).
   //
   // `noindex: true` asks search engines not to index the page and leaves
   // it out of the XML sitemap (astro.config.mjs reads this list).
@@ -31,10 +35,10 @@ export const site = {
     '/writing': { label: 'Words', group: 'Main', description: 'Essays, plus what I am watching, photographing and writing on Wikipedia.' },
     '/links': { label: 'Links', group: 'Main', description: 'Websites and online things I recommend.' },
     '/now': { label: 'Now', group: 'Main', description: 'Who I am and what I am doing lately.' },
-    '/ai': { label: 'AI', group: 'About me and this site', description: 'How I use, and do not use, generative AI.', text: true },
-    '/canon': { label: 'Canon', group: 'About me and this site', description: 'The works that have shaped me.' },
-    '/sitemap': { label: 'Sitemap', group: 'About me and this site', description: 'Every page on this site.' },
-    '/verify': { label: 'Verify', group: 'About me and this site', description: 'The accounts that are really mine.' },
+    '/ai': { label: 'AI', group: 'About me and this site', description: 'How I use, and do not use, generative AI.', text: true, extra: true },
+    '/canon': { label: 'Canon', group: 'About me and this site', description: 'The works that have shaped me.', extra: true },
+    '/sitemap': { label: 'Sitemap', group: 'About me and this site', description: 'Every page on this site.', extra: true },
+    '/verify': { label: 'Verify', group: 'About me and this site', description: 'The accounts that are really mine.', extra: true },
     '/webrings': { label: 'Webrings', group: 'About me and this site', description: 'Webrings this site belongs to.' },
     '/blank': { label: 'Blank', group: 'Odds and ends', description: 'A deliberately empty page.', noindex: true },
     '/death': { label: 'Death', group: 'Odds and ends', description: 'Instructions for family and friends if I die.', noindex: true, text: true, showSite: false },
