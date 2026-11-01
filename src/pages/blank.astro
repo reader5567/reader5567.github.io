@@ -1,0 +1,17 @@
+---
+// A deliberately empty page: the site's frame (dotted background, black
+// border) and nothing else. No header, no footer, no words.
+//
+// The tab title is a single non-breaking space. A plain space would be
+// stripped, and browsers show the page's address instead of an empty
+// title, so the tab would read "thadeussmith.com/blank".
+//
+// The empty <main> gives screen readers a named landmark rather than
+// nothing at all.
+import Layout from '../layout.astro';
+import { site } from '../site';
+const info = site.pages['/blank'];
+---
+<Layout title={' '} description={info.description} noindex bare>
+<main aria-label="Blank page"></main>
+</Layout>
