@@ -1,5 +1,4 @@
-The books, films, music and ideas that have shaped how I think. Unlike my [Links](/links), these don't have to be things you can open online.
-
+These are the things I consider to be in my "personal canon," meaning that they were foundational to how I think.
 ## Books
 
 ### Fiction
