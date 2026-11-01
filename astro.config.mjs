@@ -1,9 +1,20 @@
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
+import { site as siteSettings } from './src/site.ts';
+
+// Pages marked `noindex: true` in src/site.ts stay out of the XML sitemap,
+// as does the 404 page.
+const unlisted = new Set([
+  '/404',
+  ...Object.entries(siteSettings.pages)
+    .filter(([, page]) => page.noindex)
+    .map(([path]) => path),
+]);
+const listed = (url) => !unlisted.has(new URL(url).pathname.replace(/\/$/, '') || '/');
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [sitemap()],
+  integrations: [sitemap({ filter: listed })],
   site: "https://thadeussmith.com",
   // Astro 7 defaults to 'jsx' whitespace compression, which drops the
   // spaces between inline elements written on separate lines (the nav
