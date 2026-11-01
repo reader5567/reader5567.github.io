@@ -31,16 +31,16 @@ export const site = {
   // move it up when it is ready. `showSite: false` hides the footer's
   // Currently, Elsewhere and Updated lines on it.
   pages: {
-    '/': { label: 'CV', group: 'Main', description: 'Work, education and volunteering.' },
-    '/writing': { label: 'Words', group: 'Main', description: 'Essays, plus what I am watching, photographing and writing on Wikipedia.' },
-    '/links': { label: 'Links', group: 'Main', description: 'Websites and online things I recommend.' },
-    '/now': { label: 'Now', group: 'Main', description: 'Who I am and what I am doing lately.' },
-    '/ai': { label: 'AI', group: 'About me and this site', description: 'How I use, and do not use, generative AI.', text: true, extra: true },
-    '/canon': { label: 'Canon', group: 'About me and this site', description: 'The works that have shaped me.', extra: true },
-    '/sitemap': { label: 'Sitemap', group: 'About me and this site', description: 'Every page on this site.', extra: true },
-    '/verify': { label: 'Verify', group: 'About me and this site', description: 'The accounts that are really mine.', extra: true },
+    '/': { label: 'CV', group: 'Main', description: 'My resume.' },
+    '/writing': { label: 'Words', group: 'Main', description: 'Self-explanatory, I think.' },
+    '/links': { label: 'Links', group: 'Main', description: 'My favorite things online' },
+    '/now': { label: 'Now', group: 'Main', description: 'What I am up to.' },
+    '/ai': { label: 'AI', group: 'About me and this site', description: 'How I use (and do not use) AI.', text: true, extra: true },
+    '/canon': { label: 'Canon', group: 'About me and this site', description: 'My personal canon.', extra: true },
+    '/sitemap': { label: 'Sitemap', group: 'About me and this site', description: 'The page you are looking at now.', extra: true },
+    '/verify': { label: 'Verify', group: 'About me and this site', description: 'My online identity.', extra: true },
     '/webrings': { label: 'Webrings', group: 'About me and this site', description: 'Webrings this site belongs to.' },
-    '/blank': { label: 'Blank', group: 'Odds and ends', description: 'A deliberately empty page.', noindex: true },
+    '/blank': { label: 'Blank', group: 'Odds and ends', description: 'This page was deliberately left empty.', noindex: true },
     '/death': { label: 'Death', group: 'Odds and ends', description: 'Instructions for family and friends if I die.', noindex: true, text: true, showSite: false },
   } as Record<string, PageInfo>,
 
