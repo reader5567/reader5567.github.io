@@ -18,9 +18,9 @@ their window).
 ## Structure
 
 - `src/layout.astro` is the shared page shell (head, header, footer). Every page uses it.
-- `src/header.astro` is the name and the nav: CV, Words, Links, Now. `src/footer.astro` is the footer, including the design credit and the "Elsewhere" row of profile links (edit those in `src/content/accounts/`).
+- `src/header.astro` is the name and the nav: CV, Words, Links, Now. `src/footer.astro` is the footer, including the design credit, the "Elsewhere" row of profile links (edit those in `src/content/accounts/`) and the "Extras" row (pages marked `extra` in `src/site.ts`).
 - `src/global.css` holds all site-wide styles, including the print stylesheet.
-- `src/pages/` holds one file per page: `index.astro` (résumé), `writing.astro`, `now.astro`, `links.astro`, `webrings.astro`, `canon.astro`, `verify.astro`, `blank.astro`, `404.astro`, plus `photo-of-the-day.jpg.ts` for the Commons photo. These are the templates: layout and styles.
+- `src/pages/` holds one file per page: `index.astro` (résumé), `writing.astro`, `now.astro`, `links.astro`, `webrings.astro`, `canon.astro`, `verify.astro`, `sitemap.astro`, `blank.astro`, `404.astro`, plus `photo-of-the-day.jpg.ts` for the Commons photo. These are the templates: layout and styles.
 - `src/content/` holds the words for the Résumé, Now, Links and Webrings pages as Markdown (see below). `src/content.config.ts` describes those files, and `src/lib/markdown.ts` turns them into the markup the templates have always used, so the design does not change.
 - `src/pages/writing/` holds the essays, one Markdown file each.
 - `src/lib/` holds the build-time fetchers (`letterboxd.ts`, `commons.ts`, `wikipedia.ts`) and the shared `fetch.ts` helper. Nothing in here runs in the visitor's browser.
@@ -97,7 +97,7 @@ layout: ../../post-layout.astro
 
 ### Elsewhere
 
-Below the posts, the Writing page ("Words" in the nav) shows three sections filled in when the site builds. A line of links at the top of the page jumps to each: Posts · Letterboxd · Photo · Wikipedia.
+Below the posts, the Writing page ("Words" in the nav) shows three sections filled in when the site builds. A line of links at the top of the page jumps to each: Essays · Letterboxd · Photo · Wikipedia, after a first link out to the Canon page.
 
 - **Letterboxd**: the latest diary entries from `https://letterboxd.com/thadeusofnaz/rss/`. Title, year, stars, date, and the start of the review. No posters.
 - **Photo of the day**: one of your original (uncropped) Commons uploads, chosen by the calendar date, served from this site at `/photo-of-the-day.jpg`. Files with "crop" in the name are skipped.
@@ -184,6 +184,12 @@ head: false
 Every link to an account carries `rel="me"`, which tells IndieWeb tools the profile is yours. The proof works best when the profile links back: put `https://thadeussmith.com/verify` on your Wikipedia user page and Letterboxd bio.
 
 The sentence above the list on `/verify` is `src/content/verify.md`. Its `checked` property is the date you last went through the list, shown as a "Checked" line in the footer; change it whenever you review the accounts.
+
+## Sitemap and the Extras row
+
+`/sitemap` lists every page on the site, for people. It is built from what exists when the site builds (`src/lib/pages.ts`): each template in `src/pages/`, each published text page, and each essay. Pages are grouped and described by `pages` in `src/site.ts`; a page missing from that list still appears, under "Other", by its path. `/slashes` redirects here, since that is the usual address for a list of a site's slash pages. The XML sitemap for search engines is separate (`/sitemap-index.xml`) and leaves out pages marked `noindex`.
+
+The footer's Extras row links every page marked `extra: true` in `src/site.ts` (AI, Canon, Sitemap and Verify), alphabetically, and only once the page exists, so /ai joins it when you publish it. It is the one footer row besides the design credit that shows on essays too, so every page has a way to the sitemap.
 
 ## Credits
 

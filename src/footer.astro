@@ -8,8 +8,11 @@
 // Wikimedia Commons (see src/lib/). The Webring row shows each ring in
 // src/content/webrings/ marked `footer`, plus a "more" link to /webrings,
 // which lists them all. The Elsewhere row shows each account in
-// src/content/accounts/ marked `footer`.
+// src/content/accounts/ marked `footer`. The Extras row links the pages
+// marked `extra` in src/site.ts that exist, alphabetically; unlike the
+// rows above it, it shows on every page, essays included.
 import { accounts } from './lib/accounts';
+import { extraPages } from './lib/pages';
 import { activeWebrings } from './lib/webrings';
 import { recentFilms } from './lib/letterboxd';
 import { latestEdit } from './lib/wikipedia';
@@ -20,6 +23,7 @@ const [films, edit, upload] = await Promise.all([recentFilms(), latestEdit(), la
 const film = films[0];
 const footerRings = (await activeWebrings()).filter((r) => r.data.footer);
 const elsewhere = (await accounts()).filter((a) => a.footer);
+const extras = await extraPages();
 ---
 <footer>
 <div class="info">
@@ -29,6 +33,7 @@ const elsewhere = (await accounts()).filter((a) => a.footer);
 <p><span class="infotype">Design:</span> <a href="https://cheap.urls.loan/">E. Beaton</a></p>
 {showSite && <p><span class="infotype">Currently:</span> <span>Watched <a href={film.link}>{film.title}</a>. Edited <a href={edit.url}>{edit.title}</a>. Uploaded <a href={upload.pageUrl}>{upload.title.replace(/\.[a-z0-9]+$/i, '')}</a>.</span></p>}
 {showSite && <p><span class="infotype">Elsewhere:</span> <span>{elsewhere.map((e, i) => <>{i > 0 && ' · '}<a href={e.url} rel="me">{e.label}</a></>)}</span></p>}
+{extras.length > 0 && <p><span class="infotype">Extras:</span> <span>{extras.map((p, i) => <>{i > 0 && ' · '}<a href={p.path}>{p.info!.label}</a></>)}</span></p>}
 {footerRings.map(({ data: r }) => (
   <p><span class="infotype">Webring:</span> <span><a href={r.previous}>← previous</a> · <a href={r.home}>{r.footerLabel || r.name}</a> · <a href={r.next}>next →</a> · <a href="/webrings">more</a></span></p>
 ))}

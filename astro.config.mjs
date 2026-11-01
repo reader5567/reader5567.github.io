@@ -29,8 +29,10 @@ export default defineConfig({
       cssTarget: ['safari13', 'chrome80', 'firefox78'],
     },
   },
-  // The About page became the Now page; keep old links working.
+  // The About page became the Now page; keep old links working. /slashes is
+  // the usual address for a list of a site's slash pages; ours is /sitemap.
   redirects: {
     '/about': '/now',
+    '/slashes': '/sitemap',
   },
 });
