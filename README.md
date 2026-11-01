@@ -18,13 +18,14 @@ their window).
 ## Structure
 
 - `src/layout.astro` is the shared page shell (head, header, footer). Every page uses it.
-- `src/header.astro` is the name and the nav: CV, Words, Links, Now. `src/footer.astro` is the footer, including the design credit and the "Elsewhere" row of profile links (edit those in `src/site.ts`).
+- `src/header.astro` is the name and the nav: CV, Words, Links, Now. `src/footer.astro` is the footer, including the design credit and the "Elsewhere" row of profile links (edit those in `src/content/accounts/`).
 - `src/global.css` holds all site-wide styles, including the print stylesheet.
-- `src/pages/` holds one file per page: `index.astro` (résumé), `writing.astro`, `now.astro`, `links.astro`, `webrings.astro`, plus `photo-of-the-day.jpg.ts` for the Commons photo. These are the templates: layout and styles.
+- `src/pages/` holds one file per page: `index.astro` (résumé), `writing.astro`, `now.astro`, `links.astro`, `webrings.astro`, `verify.astro`, `blank.astro`, `404.astro`, plus `photo-of-the-day.jpg.ts` for the Commons photo. These are the templates: layout and styles.
 - `src/content/` holds the words for the Résumé, Now, Links and Webrings pages as Markdown (see below). `src/content.config.ts` describes those files, and `src/lib/markdown.ts` turns them into the markup the templates have always used, so the design does not change.
 - `src/pages/writing/` holds the essays, one Markdown file each.
 - `src/lib/` holds the build-time fetchers (`letterboxd.ts`, `commons.ts`, `wikipedia.ts`) and the shared `fetch.ts` helper. Nothing in here runs in the visitor's browser.
-- `src/site.ts` holds settings you may want to edit by hand: the footer's profile links, how many films the Writing page shows, and your profile (name, note, photo).
+- `src/pages/[page].astro` is the template for pages written entirely in Obsidian (see "Text pages" below).
+- `src/site.ts` holds settings you may want to edit by hand: the list of pages (labels, descriptions, and which are hidden from search engines), how many films the Writing page shows, and your profile (name, note, photo).
 
 ## Editing in Obsidian
 
@@ -36,7 +37,15 @@ Everything you write lives in Markdown, so the whole repository can be opened as
 | Now | `src/content/now.md` |
 | Links | `src/content/links.md` |
 | Webrings | `src/content/webrings/` |
+| Verify, and the footer's Elsewhere links | `src/content/verify.md`, `src/content/accounts/` |
 | Writing | `src/pages/writing/` (drafts in `src/pages/writing/_drafts/`) |
+| AI, Death | `src/content/ai.md`, `src/content/death.md` (drafts in `src/content/_drafts/`) |
+
+### Text pages
+
+Some pages are nothing but your words under a heading: /ai and /death so far. Each is one Markdown file, and it is published only while it sits directly in `src/content/`. Write the draft in `src/content/_drafts/`, which is never published, and move the file up to `src/content/` when it is ready; moving it back takes the page down. An optional `revised` property (a date) shows as a "Revised" line in the footer.
+
+To add another text page, add its path to `pages` in `src/site.ts` with `text: true`. `noindex: true` keeps a page away from search engines and out of the XML sitemap; /death and /blank use it.
 
 The one sentence about you on the Now page (and in the homepage h-card) is `profile.note` in `src/site.ts`, which Obsidian does not show.
 
@@ -143,6 +152,31 @@ A ring of personal sites worth wandering.
 - `order`: position on `/webrings`, lowest first, in tens like the résumé.
 
 Before joining a ring, check its rules for where the links have to go. A ring that only needs to be linked from somewhere on the site is satisfied by `/webrings`; one that checks the homepage needs `footer` ticked.
+
+## Accounts and /verify
+
+Each account you run elsewhere is one Markdown file in `src/content/accounts/`. The footer's Elsewhere row, the `rel="me"` links in every page's `<head>`, and `/verify` all read from these files, so an account is added or changed in one place.
+
+```
+---
+label: Letterboxd
+handle: ThadeusOfNaz
+url: https://letterboxd.com/ThadeusOfNaz/
+order: 20
+footer: true
+verify: true
+head: false
+---
+```
+
+- `label` is the site's name; `handle` is your name there, shown on `/verify`; `url` is the profile link (`mailto:` for email).
+- `footer`: show it in the footer's Elsewhere row, in `order` (lowest first).
+- `verify`: list it on `/verify`, alphabetically.
+- `head`: also declare it in every page's `<head>`. IndieWeb sign-in reads these, and they are there even on essays, whose footer hides the Elsewhere row. GitHub is `head` only.
+
+Every link to an account carries `rel="me"`, which tells IndieWeb tools the profile is yours. The proof works best when the profile links back: put `https://thadeussmith.com/verify` on your Wikipedia user page and Letterboxd bio.
+
+The sentence above the list on `/verify` is `src/content/verify.md`. Its `checked` property is the date you last went through the list, shown as a "Checked" line in the footer; change it whenever you review the accounts.
 
 ## Credits
 

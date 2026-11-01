@@ -41,9 +41,33 @@ const webrings = defineCollection({
   }),
 });
 
-// Single-file pages: now.md and links.md.
+// One file per account you run elsewhere. Every link to one of these
+// carries rel="me", which tells IndieWeb tools the profile is yours.
+// `footer` shows it in the footer's Elsewhere row (in `order`, lowest
+// first); `verify` lists it on /verify (alphabetically); `head` also
+// declares it in every page's <head>, which IndieWeb sign-in reads even
+// on pages whose footer hides the Elsewhere row. `handle` is the name
+// shown on /verify.
+const flag = z.boolean().nullish().transform((v) => v ?? false);
+const accounts = defineCollection({
+  loader: glob({ pattern: '*.md', base: './src/content/accounts' }),
+  schema: z.object({
+    label: z.coerce.string(),
+    handle: blank,
+    url: z.string(),
+    order: z.number().nullish().transform((v) => v ?? 100),
+    footer: flag,
+    verify: flag,
+    head: flag,
+  }),
+});
+
+// Single-file pages: now.md, links.md and verify.md, plus the pages written
+// entirely in Obsidian (`text: true` in src/site.ts, such as ai.md and death.md).
+// The pattern only matches files directly in src/content/, so drafts in
+// src/content/_drafts/ and old text in src/content/_archive/ stay unpublished.
 const pages = defineCollection({
   loader: glob({ pattern: '*.md', base: './src/content' }),
 });
 
-export const collections = { resume, pages, webrings };
+export const collections = { resume, pages, webrings, accounts };

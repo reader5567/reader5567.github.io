@@ -1,0 +1,61 @@
+---
+// The accounts that are really mine. The words above the list are
+// src/content/verify.md; the list itself is every account in
+// src/content/accounts/ marked `verify`, in alphabetical order. Each link
+// carries rel="me", like the footer's.
+//
+// The `checked` property in verify.md is the date the list was last
+// reviewed, shown as a "Checked" line in the footer. Change it whenever you
+// go through the list. (The footer's Updated date changes every night with
+// the rebuild, so it says nothing about the list itself.)
+import Layout from '../layout.astro';
+import { getEntry } from 'astro:content';
+import { accounts } from '../lib/accounts';
+import { site } from '../site';
+
+const info = site.pages['/verify'];
+const text = await getEntry('pages', 'verify');
+const listed = (await accounts())
+  .filter((a) => a.verify)
+  .sort((a, b) => a.label.localeCompare(b.label));
+
+const checked = text?.data?.checked ? new Date(text.data.checked) : null;
+const rows = checked && !isNaN(checked.getTime())
+  ? [{ label: 'Checked', text: checked.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UTC' }) }]
+  : [];
+---
+<Layout title={`Thadeus Smith – ${info.label}`} description={info.description} rows={rows}>
+<article id="main">
+<style>
+/* Same bordered block as the Links and Webrings entries. */
+.account{
+border-left: 6px solid;
+padding-left: 0.5rem;
+margin: 1rem 0;
+}
+.account p{
+margin: 0.5rem 0;
+}
+.name{
+font-weight: 650;
+display: block;
+}
+.handle{
+overflow-wrap: anywhere;
+}
+@media screen and (max-width: 800px) {
+  .account{
+    border-left: 4px solid;
+    padding-left: 0.25rem;
+  }
+}
+</style>
+<h2>{info.label}</h2>
+<Fragment set:html={text?.rendered?.html} />
+{listed.map((a) => (
+  <div class="account">
+    <p><span class="name">{a.label}</span><a class="handle" href={a.url} rel="me">{a.handle || a.url}</a></p>
+  </div>
+))}
+</article>
+</Layout>
