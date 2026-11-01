@@ -1,0 +1,84 @@
+---
+import Layout from '../layout.astro';
+import { getEntry } from 'astro:content';
+import { linksHtml } from '../lib/markdown';
+import { site } from '../site';
+// The works that have shaped me, in any medium. The list is
+// src/content/canon.md, written like links.md: each entry is a title (and
+// " by author") on one line, then a sentence about it on the next. The
+// difference from Links is the rule: Links is for things you can open
+// online now; Canon is for what shaped me, whatever form it takes.
+//
+// A ## section with nothing under it yet (Films, Music and Ideas, to start)
+// is left off the page and the jump line until something is added, so
+// visitors never see an empty heading.
+const info = site.pages['/canon'];
+const canon = await getEntry('pages', 'canon');
+const html = canon?.rendered?.html ?? '';
+
+// Split before each ## heading; keep the intro and every section that has
+// something under its heading.
+const parts = html.split(/(?=<h2\b)/);
+const kept = parts.filter((part) => !part.startsWith('<h2') || part.replace(/^<h2\b[^>]*>[\s\S]*?<\/h2>/, '').trim() !== '');
+const shown = kept.join('');
+const sections = (canon?.rendered?.metadata?.headings ?? [])
+  .filter((h) => h.depth === 2 && shown.includes(`id="${h.slug}"`));
+---
+<Layout title={`Thadeus Smith – ${info.label}`} description="Books, films, music and ideas that have shaped Thadeus Smith.">
+<style>
+/* Same styles as the Links page. The list comes from src/content/canon.md,
+   so its elements are not part of this template and Astro's scoped styles
+   would skip them. :global() lets the rules reach them; anchoring on main
+   keeps them to this page. */
+main :global(ul.links){
+list-style: none;
+margin: 0 0 2rem;
+padding: 0;
+}
+main :global(ul.links li){
+border-left: 6px solid;
+padding-left: 0.5rem;
+margin: 1rem 0;
+}
+main :global(.name){
+font-weight: 650;
+}
+main :global(.about){
+font-size: 85%;
+opacity: 70%;
+display: block;
+margin-top: 0.25rem;
+}
+main :global(h3){
+margin: 2rem 0 0.5rem;
+}
+main :global(h4){
+font-size: 1rem;
+font-family: monospace;
+font-weight: bold;
+text-transform: uppercase;
+margin: 1rem 0 0.25rem;
+}
+main :global(h5){
+font-size: 0.9rem;
+font-family: monospace;
+font-weight: bold;
+margin: 0.75rem 0 0.25rem;
+}
+/* Keep a jumped-to heading clear of the fixed frame at the top. */
+main :global(h3), main :global(h4){
+scroll-margin-top: 1.5rem;
+}
+@media screen and (max-width: 800px) {
+  main :global(ul.links li){
+    border-left: 4px solid;
+    padding-left: 0.25rem;
+  }
+}
+</style>
+<main id="main">
+{sections.length > 1 && <p class="jump">{sections.map((h, i) => <>{i > 0 && ' · '}<a href={`#${h.slug}`}>{h.text}</a></>)}</p>}
+<h2>{info.label}</h2>
+<Fragment set:html={linksHtml(shown)} />
+</main>
+</Layout>
