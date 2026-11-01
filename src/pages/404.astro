@@ -8,7 +8,7 @@
 // cycling through the list below in order. Edit the wording freely; add or
 // remove criteria and the cycle adjusts.
 import Layout from '../layout.astro';
-import { site } from '../site';
+import { accounts } from '../lib/accounts';
 
 const criteria = [
   { code: 'G1', reason: 'Patent nonsense, meaningless, or incomprehensible' },
@@ -28,7 +28,7 @@ const criterion = criteria[day % criteria.length];
 const pad = (n: number) => String(n).padStart(2, '0');
 const stamp = `${pad(built.getUTCHours())}:${pad(built.getUTCMinutes())}, ${built.getUTCDate()} ${built.toLocaleString('en-US', { month: 'long', timeZone: 'UTC' })} ${built.getUTCFullYear()}`;
 
-const email = site.elsewhere.find((e) => e.label === 'Email')?.url;
+const email = (await accounts()).find((a) => a.label === 'Email')?.url;
 
 // Link the sitemap only once that page exists, so this page never sends
 // anyone to another missing page.

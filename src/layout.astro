@@ -13,7 +13,10 @@
 import './global.css';
 import Header from './header.astro';
 import Footer from './footer.astro';
+import { accounts } from './lib/accounts';
 const { title, description, rows = [], showSite = true, noindex = false, bare = false } = Astro.props;
+// Accounts marked `head` in src/content/accounts/.
+const relMe = (await accounts()).filter((a) => a.head);
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -25,8 +28,7 @@ const { title, description, rows = [], showSite = true, noindex = false, bare = 
 {noindex && <meta name="robots" content="noindex" />}
 <link rel="sitemap" href="/sitemap-index.xml" />
 <!-- rel="me" links verify that these profiles and this site belong to the same person (used by IndieWeb sign-in). -->
-<link rel="me" href="https://github.com/reader5567">
-<link rel="me" href="https://en.wikipedia.org/wiki/User:ThadeusOfNazereth">
+{relMe.map((a) => <link rel="me" href={a.url}>)}
 <title>{title}</title>
 <slot name="head" />
 </head>
