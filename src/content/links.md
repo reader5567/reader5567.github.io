@@ -1,4 +1,4 @@
-This is a big collection of things I like, find interesting, recommend, and/or actively use. I hope you do too!
+This is a big collection of things I like, find interesting, recommend, and/or actively use. I hope you do too! Books and other things that can't be opened online are on my [Canon](/canon) page.
 
 ## Dailies
 - [Framed](https://framed.wtf/)

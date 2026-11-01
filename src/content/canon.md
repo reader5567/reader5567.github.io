@@ -1,4 +1,6 @@
-These entries were on the Links page before it was limited to things you can open online (October 2026). This folder is not published; nothing here appears on the site.
+The books, films, music and ideas that have shaped how I think. Unlike my [Links](/links), these don't have to be things you can open online.
+
+## Books
 
 ### Fiction
 
@@ -26,3 +28,9 @@ These entries were on the Links page before it was limited to things you can ope
   An unusual biography that focuses almost entirely on [George Washington](https://en.wikipedia.org/wiki/George_Washington)'s post-presidency years, providing insight into his personal struggle with slavery.
 - *Normal Life* by [Dean Spade](https://en.wikipedia.org/wiki/Dean_Spade)
   About the myriad of ways bureaucratic violence impacts the life of trans people in America and around the world.
+
+## Films
+
+## Music
+
+## Ideas

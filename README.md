@@ -20,7 +20,7 @@ their window).
 - `src/layout.astro` is the shared page shell (head, header, footer). Every page uses it.
 - `src/header.astro` is the name and the nav: CV, Words, Links, Now. `src/footer.astro` is the footer, including the design credit and the "Elsewhere" row of profile links (edit those in `src/content/accounts/`).
 - `src/global.css` holds all site-wide styles, including the print stylesheet.
-- `src/pages/` holds one file per page: `index.astro` (résumé), `writing.astro`, `now.astro`, `links.astro`, `webrings.astro`, `verify.astro`, `blank.astro`, `404.astro`, plus `photo-of-the-day.jpg.ts` for the Commons photo. These are the templates: layout and styles.
+- `src/pages/` holds one file per page: `index.astro` (résumé), `writing.astro`, `now.astro`, `links.astro`, `webrings.astro`, `canon.astro`, `verify.astro`, `blank.astro`, `404.astro`, plus `photo-of-the-day.jpg.ts` for the Commons photo. These are the templates: layout and styles.
 - `src/content/` holds the words for the Résumé, Now, Links and Webrings pages as Markdown (see below). `src/content.config.ts` describes those files, and `src/lib/markdown.ts` turns them into the markup the templates have always used, so the design does not change.
 - `src/pages/writing/` holds the essays, one Markdown file each.
 - `src/lib/` holds the build-time fetchers (`letterboxd.ts`, `commons.ts`, `wikipedia.ts`) and the shared `fetch.ts` helper. Nothing in here runs in the visitor's browser.
@@ -36,6 +36,7 @@ Everything you write lives in Markdown, so the whole repository can be opened as
 | Résumé | `src/content/resume/` |
 | Now | `src/content/now.md` |
 | Links | `src/content/links.md` |
+| Canon | `src/content/canon.md` |
 | Webrings | `src/content/webrings/` |
 | Verify, and the footer's Elsewhere links | `src/content/verify.md`, `src/content/accounts/` |
 | Writing | `src/pages/writing/` (drafts in `src/pages/writing/_drafts/`) |
@@ -43,7 +44,7 @@ Everything you write lives in Markdown, so the whole repository can be opened as
 
 ### Text pages
 
-Some pages are nothing but your words under a heading: /ai and /death so far. Each is one Markdown file, and it is published only while it sits directly in `src/content/`. Write the draft in `src/content/_drafts/`, which is never published, and move the file up to `src/content/` when it is ready; moving it back takes the page down. An optional `revised` property (a date) shows as a "Revised" line in the footer.
+Some pages are nothing but your words under a heading: /ai and /death so far. Both start as drafts in `src/content/_drafts/` (/death with prompts for each section, written as `<!-- -->` comments that never show on the page). Each is one Markdown file, and it is published only while it sits directly in `src/content/`. Write the draft in `src/content/_drafts/`, which is never published, and move the file up to `src/content/` when it is ready; moving it back takes the page down. An optional `revised` property (a date) shows as a "Revised" line in the footer.
 
 To add another text page, add its path to `pages` in `src/site.ts` with `text: true`. `noindex: true` keeps a page away from search engines and out of the XML sitemap; /death and /blank use it.
 
@@ -125,7 +126,13 @@ Each item is two lines: the title (with " by author" if there is one), then the 
 
 The title shows in bold and the description in the small grey type below it. `src/pages/links.astro` is the template.
 
-The book recommendations that used to be on this page are kept, unpublished, in `src/content/_archive/links-books.md`. Nothing in `src/content/_archive/` appears on the site.
+The book recommendations that used to be on this page are now on the Canon page (`src/content/canon.md`). Nothing in `src/content/_archive/` appears on the site, if you archive anything else there.
+
+## Canon page
+
+The list is `src/content/canon.md`, written exactly like `links.md` (same two-line items, same `##` sections and `###` subsections). The difference is the rule: Links is for things a visitor can open online; Canon is for the works that shaped you, in any medium. It started from the books that were on the Links page.
+
+Unlike Links, a `##` section with nothing under it is left off the page and its jump line until it has an entry, so Films, Music and Ideas can sit in the file empty until you are ready to fill them.
 
 ## Webrings
 
