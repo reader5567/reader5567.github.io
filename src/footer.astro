@@ -7,8 +7,9 @@
 // "Currently" is filled in at build time from Letterboxd, Wikipedia and
 // Wikimedia Commons (see src/lib/). The Webring row shows each ring in
 // src/content/webrings/ marked `footer`, plus a "more" link to /webrings,
-// which lists them all.
-import { site } from './site';
+// which lists them all. The Elsewhere row shows each account in
+// src/content/accounts/ marked `footer`.
+import { accounts } from './lib/accounts';
 import { activeWebrings } from './lib/webrings';
 import { recentFilms } from './lib/letterboxd';
 import { latestEdit } from './lib/wikipedia';
@@ -18,6 +19,7 @@ const built = new Date();
 const [films, edit, upload] = await Promise.all([recentFilms(), latestEdit(), latestUpload()]);
 const film = films[0];
 const footerRings = (await activeWebrings()).filter((r) => r.data.footer);
+const elsewhere = (await accounts()).filter((a) => a.footer);
 ---
 <footer>
 <div class="info">
@@ -26,7 +28,7 @@ const footerRings = (await activeWebrings()).filter((r) => r.data.footer);
 ))}
 <p><span class="infotype">Design:</span> <a href="https://cheap.urls.loan/">E. Beaton</a></p>
 {showSite && <p><span class="infotype">Currently:</span> <span>Watched <a href={film.link}>{film.title}</a>. Edited <a href={edit.url}>{edit.title}</a>. Uploaded <a href={upload.pageUrl}>{upload.title.replace(/\.[a-z0-9]+$/i, '')}</a>.</span></p>}
-{showSite && <p><span class="infotype">Elsewhere:</span> <span>{site.elsewhere.map((e, i) => <>{i > 0 && ' · '}<a href={e.url} rel="me">{e.label}</a></>)}</span></p>}
+{showSite && <p><span class="infotype">Elsewhere:</span> <span>{elsewhere.map((e, i) => <>{i > 0 && ' · '}<a href={e.url} rel="me">{e.label}</a></>)}</span></p>}
 {footerRings.map(({ data: r }) => (
   <p><span class="infotype">Webring:</span> <span><a href={r.previous}>← previous</a> · <a href={r.home}>{r.footerLabel || r.name}</a> · <a href={r.next}>next →</a> · <a href="/webrings">more</a></span></p>
 ))}

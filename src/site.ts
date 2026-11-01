@@ -10,16 +10,8 @@ export type PageInfo = {
 };
 
 export const site = {
-  // Profiles listed in the footer's "Elsewhere" row, in this order. Each link
-  // carries rel="me", which tells IndieWeb tools the profile is yours.
-  elsewhere: [
-    { label: 'Email', url: 'mailto:nrhw9q4y@anonaddy.me' },
-    { label: 'Letterboxd', url: 'https://letterboxd.com/ThadeusOfNaz/' },
-    { label: 'LinkedIn', url: 'https://www.linkedin.com/in/thadeushsmith/' },
-    { label: 'Instagram', url: 'https://www.instagram.com/thadeusofnazereth/' },
-    { label: 'X', url: 'https://x.com/ThadeusOfNaz/' },
-    { label: 'Wikipedia', url: 'https://en.wikipedia.org/wiki/User:ThadeusOfNazereth' },
-  ],
+  // The footer's profile links live in src/content/accounts/, one file per
+  // account, so they can be edited in Obsidian.
 
   // Every page, by path. The human-readable /sitemap (added in a later
   // change) lists each page that exists under its `group`, with its
