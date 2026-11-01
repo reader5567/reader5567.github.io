@@ -1,0 +1,75 @@
+---
+// The "page not found" page, dressed as a Wikipedia deletion log. GitHub
+// Pages serves this (as 404.html, with a 404 status) for any address that
+// does not exist. With no JavaScript the page cannot know which address
+// was asked for, so the log says "this page".
+//
+// The speedy deletion criterion changes with each build (so, nightly),
+// cycling through the list below in order. Edit the wording freely; add or
+// remove criteria and the cycle adjusts.
+import Layout from '../layout.astro';
+import { site } from '../site';
+
+const criteria = [
+  { code: 'G1', reason: 'Patent nonsense, meaningless, or incomprehensible' },
+  { code: 'G7', reason: 'One author who has requested deletion or blanked the page' },
+  { code: 'A7', reason: 'No credible indication of importance' },
+  { code: 'A11', reason: 'Obviously invented' },
+  { code: 'U2', reason: 'Userpage or subpage of a nonexistent user' },
+];
+
+// One step through the list per day, counted from 1 January 1970, so
+// every build on the same day shows the same criterion.
+const built = new Date();
+const day = Math.floor(built.getTime() / 86_400_000);
+const criterion = criteria[day % criteria.length];
+
+// MediaWiki's log timestamp style: "01:23, 1 November 2026".
+const pad = (n: number) => String(n).padStart(2, '0');
+const stamp = `${pad(built.getUTCHours())}:${pad(built.getUTCMinutes())}, ${built.getUTCDate()} ${built.toLocaleString('en-US', { month: 'long', timeZone: 'UTC' })} ${built.getUTCFullYear()}`;
+
+const email = site.elsewhere.find((e) => e.label === 'Email')?.url;
+
+// Link the sitemap only once that page exists, so this page never sends
+// anyone to another missing page.
+const hasSitemap = Object.keys(import.meta.glob('./sitemap.astro')).length > 0;
+---
+<Layout title="Thadeus Smith – Page deleted" description="This page does not exist." noindex>
+<article id="main">
+<style>
+/* Same bordered block as the Links and Webrings entries; the log line
+   uses the footer's monospace. */
+.log{
+border-left: 6px solid;
+padding-left: 0.5rem;
+margin: 1rem 0 2rem;
+font-family: monospace;
+font-weight: bold;
+font-size: 1rem;
+overflow-wrap: anywhere;
+}
+.log p{
+margin: 0.5rem 0;
+}
+summary{
+cursor: pointer;
+}
+@media screen and (max-width: 800px) {
+  .log{
+    border-left: 4px solid;
+    padding-left: 0.25rem;
+  }
+}
+</style>
+<h2>Page deleted</h2>
+<p>This page has been deleted. The deletion log for this page is provided below for reference.</p>
+<div class="log">
+<p>{stamp} <a href="/now">ThadeusOfNazereth</a> (<a href={email}>talk</a> | <a href="/writing">contribs</a>) deleted page <em>this page</em> ({criterion.code}: {criterion.reason})</p>
+</div>
+<details>
+<summary>Request undeletion</summary>
+<p>Declined. The deleting administrator has reviewed the request and is satisfied that this page never existed in the first place.</p>
+</details>
+<p>Try the <a href="/">CV</a>{hasSitemap ? <>, or the <a href="/sitemap">sitemap</a> for every page on this site</> : null}.</p>
+</article>
+</Layout>
