@@ -2,7 +2,7 @@
 label: Instagram
 handle: thadeusofnazereth
 url: https://www.instagram.com/thadeusofnazereth/
-order: 40
+order: 50
 footer: true
 verify: true
 head: false
