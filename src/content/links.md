@@ -54,7 +54,7 @@ This is a big collection of things I like, find interesting, recommend, and/or a
   A regular internet-focused newsletter. I'm especially partial to their "[My Internet](https://embedded.substack.com/t/my-internet)" series, which covers the internet habits of microcelebrities.
 - *[File 770](https://file770.com/)*
   A long-running fanzine by [Mike Glyer](https://en.wikipedia.org/wiki/Mike_Glyer) and associates, which was my introduction to the wonderful world of fandom.
-- *[Joel Chrono](*https://joelchrono.xyz/)
+- *[Joel Chrono](https://joelchrono.xyz/)*
   A very much stream-of-consciousness blog from a Mexican sysadmin and hobbyist.
 - *[A Reading Life](https://petya.substack.com/)*
   A blog about reading and how it changes our lives.
