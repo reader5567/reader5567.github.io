@@ -1,12 +1,12 @@
-### What I'm doing now (October 2026)
+### What I'm doing now (November 2026)
 
 **Working.** I'm the Director of Education at Lumos Debate, where I supervise our Boston-area classes, train our instructors, and run monthly tournaments. I am also a freelance speech & debate coach at national circuit competitions, primarily for the American Heritage School in Florida, and edit the Big Questions and Public Forum briefs for Champion Briefs.
 
 **Driving**. A 2019 Kia Sportage with 100,000 miles.
 
-**Editing.** I'm currently taking part in the [October 2026 Good Article Nomination Backlog Drive](https://en.wikipedia.org/wiki/Wikipedia:Good_articles/GAN_Backlog_Drives/October_2026). Next month, I'll be participating in the [Asia-Oceania Destubathon](https://en.wikipedia.org/wiki/Wikipedia:The_Asia-Oceania_Destubathon) and the [Unreferenced Articles November 2026 Backlog Drive](https://en.wikipedia.org/wiki/Wikipedia:WikiProject_Unreferenced_articles/Backlog_drives/November_2026).
+**Editing.** This month, I'm participating in the [Asia-Oceania Destubathon](https://en.wikipedia.org/wiki/Wikipedia:The_Asia-Oceania_Destubathon) and the [Unreferenced Articles November 2026 Backlog Drive](https://en.wikipedia.org/wiki/Wikipedia:WikiProject_Unreferenced_articles/Backlog_drives/November_2026). Last month, I took part in the [October 2026 Good Article Nomination Backlog Drive](https://en.wikipedia.org/wiki/Wikipedia:Good_articles/GAN_Backlog_Drives/October_2026) and completed thirty reviews. Overall, that drive was a big success, with me learning that I really enjoy doing reviews and the backlog of reviews shrinking to 774 from a peak of 1,040.
 
-**Exercising**. Climbing at [Central Rock Gym](https://centralrockgym.com/) and going on long walks through the city.
+**Exercising**. Climbing at [Central Rock Gym](https://centralrockgym.com/) and going on long walks through the city. I'm down to ~280 pounds from when I started climbing at 332, so it's been life-changing.
 
 **Listening.** My coworkers have fantastic music taste and have been putting me onto some great stuff, like MUNA's "[Big Stick](https://www.youtube.com/watch?v=GkWO2WO26yo)," Zach Bryan's "[Robot Killed the Working Man](https://www.youtube.com/watch?v=Izd-iRmYYGY)," and Daisy Grenade's "[Emily](https://www.youtube.com/watch?v=RlIAg1lHN4g)."
 
